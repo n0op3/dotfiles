@@ -1,6 +1,7 @@
 #!/bin/sh
 killall loop_wallpapers.sh 
 if [ $? -eq 0 ]; then
+  swww kill
   for i in {1..2}
   do
     rm /tmp/current_wallpaper
