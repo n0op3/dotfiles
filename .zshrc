@@ -33,8 +33,11 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+# cd
+setopt autocd
+
 # Aliases
-alias ..='cd ..'
+alias cp='fcp'
 alias nv='nvim'
 alias xopen='xdg-open'
 alias ls='lsd'
