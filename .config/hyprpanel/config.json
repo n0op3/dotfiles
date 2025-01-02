@@ -1,0 +1,100 @@
+{
+  "bar.customModules.updates.pollingInterval": 1440000,
+  "menus.dashboard.powermenu.avatar.image": "/home/javatrix/Pictures/pfp/white-black-girl.jpg",
+  "theme.bar.floating": true,
+  "bar.autoHide": "fullscreen",
+  "theme.bar.buttons.enableBorders": false,
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "workspaces"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "network",
+        "bluetooth",
+        "battery",
+        "systray",
+        "clock",
+        "notifications"
+      ]
+    },
+    "1": {
+      "left": [
+        "dashboard",
+        "workspaces"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "network",
+        "bluetooth",
+        "battery",
+        "systray",
+        "clock",
+        "notifications"
+      ]
+    }
+  },
+  "theme.bar.border.location": "bottom",
+  "theme.bar.layer": "top",
+  "theme.bar.buttons.padding_y": "0.1rem",
+  "bar.launcher.autoDetectIcon": true,
+  "theme.bar.buttons.dashboard.enableBorder": true,
+  "theme.bar.menus.menu.dashboard.profile.radius": "2em",
+  "menus.dashboard.powermenu.sleep": "loginctl suspend",
+  "menus.dashboard.powermenu.reboot": "loginctl reboot",
+  "menus.dashboard.powermenu.shutdown": "loginctl poweroff",
+  "menus.dashboard.controls.enabled": true,
+  "menus.dashboard.shortcuts.enabled": false,
+  "menus.dashboard.directories.enabled": false,
+  "theme.notification.border_radius": "0.3em",
+  "notifications.monitor": 0,
+  "notifications.position": "top right",
+  "notifications.clearDelay": 100,
+  "notifications.timeout": 8000,
+  "notifications.autoDismiss": false,
+  "theme.osd.margins": "0px 8px 0px 0px",
+  "theme.osd.orientation": "vertical",
+  "theme.osd.border.size": "0.1em",
+  "theme.osd.radius": "0.8em",
+  "menus.media.displayTimeTooltip": false,
+  "menus.media.noMediaText": "Not vibing :(",
+  "theme.bar.transparent": false,
+  "theme.bar.buttons.dashboard.icon": "#dc8add",
+  "theme.bar.buttons.dashboard.border": "#613583",
+  "theme.matugen": true,
+  "wallpaper.image": "/tmp/current_wallpaper",
+  "theme.bar.menus.monochrome": false,
+  "menus.transition": "crossfade",
+  "menus.transitionTime": 125,
+  "scalingPriority": "hyprland",
+  "menus.clock.time.military": true,
+  "menus.clock.time.hideSeconds": false,
+  "menus.clock.weather.location": "Cracow",
+  "menus.clock.weather.key": "b279d8f2ec564796a6e144831243012",
+  "menus.clock.weather.unit": "metric",
+  "bar.workspaces.show_numbered": false,
+  "bar.workspaces.showWsIcons": true,
+  "bar.workspaces.workspaceIconMap": {
+    "1": "一",
+    "2": "二",
+    "3": "三",
+    "4": "四",
+    "5": "五",
+    "6": "六",
+    "7": "七",
+    "8": "八",
+    "9": "九",
+    "10": "十"
+  },
+  "bar.windowtitle.icon": true,
+  "theme.bar.buttons.clock.enableBorder": false,
+  "bar.clock.format": "%a %b %d  %H:%M:%S"
+}
