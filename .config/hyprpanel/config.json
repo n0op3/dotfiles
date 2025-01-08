@@ -96,5 +96,9 @@
   },
   "bar.windowtitle.icon": true,
   "theme.bar.buttons.clock.enableBorder": false,
-  "bar.clock.format": "%a %b %d  %H:%M:%S"
+  "bar.clock.format": "%a %b %d  %H:%M:%S",
+  "menus.volume.raiseMaximumVolume": true,
+  "theme.bar.buttons.workspaces.enableBorder": false,
+  "bar.workspaces.numbered_active_indicator": "highlight",
+  "theme.bar.buttons.systray.enableBorder": false
 }
