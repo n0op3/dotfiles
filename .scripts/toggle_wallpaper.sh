@@ -14,5 +14,6 @@ if [ $? -eq 0 ]; then
       | grep -v '^[[:space:]]*$')"
   done
 else
+  swww-daemon
   loop_wallpapers.sh
 fi

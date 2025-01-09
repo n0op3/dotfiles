@@ -100,5 +100,11 @@
   "menus.volume.raiseMaximumVolume": true,
   "theme.bar.buttons.workspaces.enableBorder": false,
   "bar.workspaces.numbered_active_indicator": "highlight",
-  "theme.bar.buttons.systray.enableBorder": false
+  "theme.bar.buttons.systray.enableBorder": false,
+  "theme.bar.buttons.opacity": 35,
+  "theme.bar.opacity": 65,
+  "theme.bar.menus.opacity": 100,
+  "theme.matugen_settings.mode": "dark",
+  "theme.matugen_settings.scheme_type": "tonal-spot",
+  "theme.matugen_settings.variation": "standard_1"
 }
