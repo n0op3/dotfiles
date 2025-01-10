@@ -101,10 +101,14 @@
   "theme.bar.buttons.workspaces.enableBorder": false,
   "bar.workspaces.numbered_active_indicator": "highlight",
   "theme.bar.buttons.systray.enableBorder": false,
-  "theme.bar.buttons.opacity": 35,
-  "theme.bar.opacity": 65,
+  "theme.bar.buttons.opacity": 80,
+  "theme.bar.opacity": 100,
   "theme.bar.menus.opacity": 100,
   "theme.matugen_settings.mode": "dark",
   "theme.matugen_settings.scheme_type": "tonal-spot",
-  "theme.matugen_settings.variation": "standard_1"
+  "theme.matugen_settings.variation": "standard_1",
+  "theme.bar.location": "top",
+  "bar.volume.scrollDown": "hyprpanel vol -1",
+  "bar.volume.scrollUp": "hyprpanel vol +1",
+  "bar.network.truncation": false
 }
