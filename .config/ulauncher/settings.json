@@ -13,7 +13,7 @@
     "render-on-screen": "mouse-pointer-monitor",
     "show-recent-apps": "4",
     "show-tray-icon": true,
-    "terminal-command": "",
+    "terminal-command": "kitty",
     "theme-name": "Catppuccin-Mocha-Blue",
     "tray-icon-name": "ulauncher-indicator-symbolic"
 }
