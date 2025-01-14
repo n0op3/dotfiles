@@ -25,3 +25,27 @@ button:focus, button:active, button:hover {
 	background-color: rgb(48, 50, 66);
 	outline-style: none;
 }
+
+#lock {
+    background-image: url("/home/javatrix/.config/wlogout/icons/lock.svg");
+}
+
+#logout {
+    background-image: url("/home/javatrix/.config/wlogout/icons/logout.svg");
+}
+
+#suspend {
+    background-image: url("/home/javatrix/.config/wlogout/icons/suspend.svg");
+}
+
+#hibernate {
+    background-image: url("/home/javatrix/.config/wlogout/icons/hibernate.svg");
+}
+
+#shutdown {
+    background-image: url("/home/javatrix/.config/wlogout/icons/shutdown.svg");
+}
+
+#reboot {
+    background-image: url("/home/javatrix/.config/wlogout/icons/reboot.svg");
+}
