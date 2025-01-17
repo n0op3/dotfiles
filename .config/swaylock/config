@@ -1,6 +1,5 @@
 indicator
 clock
-fade-in=1
 color=1e1e2e
 indicator-radius=512
 bs-hl-color=f5e0dc
