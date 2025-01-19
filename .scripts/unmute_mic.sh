@@ -3,4 +3,5 @@ while true; do
     control_name=$(echo "$control" | cut -d"'" -f2);
     amixer -c 2 set "$control_name" 100%
   done
+  sleep 0.1
 done
