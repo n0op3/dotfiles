@@ -1,5 +1,14 @@
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
 
+# Apply pywal colors
+(cat ~/.cache/wal/sequences &)
+
+# Alternative (blocks terminal for 0-3ms)
+cat ~/.cache/wal/sequences
+
+# To add support for TTYs this line can be optionally added.
+source ~/.cache/wal/colors-tty.sh
+
 # FZF
 source <(fzf --zsh)
 

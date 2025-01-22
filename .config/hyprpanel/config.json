@@ -70,7 +70,7 @@
   "theme.bar.buttons.dashboard.icon": "#dc8add",
   "theme.bar.buttons.dashboard.border": "#613583",
   "theme.matugen": true,
-  "wallpaper.image": "/tmp/current_wallpaper",
+  "wallpaper.image": "/home/javatrix/.cache/current_wallpaper.png",
   "theme.bar.menus.monochrome": false,
   "menus.transition": "crossfade",
   "menus.transitionTime": 125,

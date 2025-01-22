@@ -1,24 +1,24 @@
 {
-    "label" : "reboot",
-    "action" : "loginctl reboot",
-    "text" : "Reboot",
-    "keybind" : "r"
+  "label" : "reboot",
+  "action" : "loginctl reboot",
+  "text" : "Reboot",
+  "keybind" : "r"
 }
 {
-    "label" : "shutdown",
-    "action" : "loginctl poweroff",
-    "text" : "Shutdown",
-    "keybind" : "s"
+  "label" : "shutdown",
+  "action" : "loginctl poweroff",
+  "text" : "Shutdown",
+  "keybind" : "s"
 }
 {
-    "label" : "suspend",
-    "action" : "loginctl suspend",
-    "text" : "Suspend",
-    "keybind" : "s"
+  "label" : "suspend",
+  "action" : "loginctl suspend",
+  "text" : "Suspend",
+  "keybind" : "u"
 }
 {
-    "label" : "hibernate",
-    "action" : "loginctl hibernate",
-    "text" : "Hibernate",
-    "keybind" : "h"
+  "label" : "hibernate",
+  "action" : "loginctl hibernate",
+  "text" : "Hibernate",
+  "keybind" : "h"
 }
