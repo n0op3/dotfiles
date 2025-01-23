@@ -106,7 +106,7 @@
   "theme.bar.menus.opacity": 100,
   "theme.matugen_settings.mode": "dark",
   "theme.matugen_settings.scheme_type": "tonal-spot",
-  "theme.matugen_settings.variation": "standard_1",
+  "theme.matugen_settings.variation": "monochrome_2",
   "theme.bar.location": "top",
   "bar.volume.scrollDown": "hyprpanel vol -1",
   "bar.volume.scrollUp": "hyprpanel vol +1",
@@ -128,5 +128,5 @@
   "theme.bar.buttons.y_margins": "0.4em",
   "theme.bar.buttons.spacing": "0.15em",
   "bar.scrollSpeed": 1,
-  "theme.matugen_settings.contrast": 0.5
+  "theme.matugen_settings.contrast": 0.9
 }
