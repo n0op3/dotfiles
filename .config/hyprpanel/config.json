@@ -105,7 +105,7 @@
   "theme.bar.opacity": 100,
   "theme.bar.menus.opacity": 100,
   "theme.matugen_settings.mode": "dark",
-  "theme.matugen_settings.scheme_type": "rainbow",
+  "theme.matugen_settings.scheme_type": "tonal-spot",
   "theme.matugen_settings.variation": "standard_1",
   "theme.bar.location": "top",
   "bar.volume.scrollDown": "hyprpanel vol -1",

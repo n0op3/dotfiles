@@ -1,5 +1,5 @@
 [[manager.prepend_keymap]]
-on   = "<C-w>"
+on   = "<C-A-w>"
 run  = '''
   shell 'set_wallpaper.sh $1'
 '''
