@@ -6,6 +6,6 @@ cp $1 ~/.config/rofi/background.png
 rm ~/.cache/wal
 wal -i ~/.cache/current_wallpaper.png --saturate 0.9
 walcord # Vesktop theme update
-hyprpanel -q; start-stop-daemon hyprpanel # Restart the bar
 pywalfox update # Refresh firefox theme
+hyprpanel -q; start-stop-daemon hyprpanel # Restart the bar
 killall ulauncher; start-stop-daemon ulauncher
