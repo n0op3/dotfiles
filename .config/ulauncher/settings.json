@@ -14,6 +14,6 @@
     "show-recent-apps": "4",
     "show-tray-icon": true,
     "terminal-command": "kitty",
-    "theme-name": "Catppuccin-Mocha-Blue",
+    "theme-name": "Pywal-Ulauncher-Theme",
     "tray-icon-name": "ulauncher-indicator-symbolic"
 }
