@@ -12,7 +12,7 @@
 }
 {
   "label" : "suspend",
-  "action" : "loginctl suspend",
+  "action" : "sudo nvidia-sleep.sh suspend; loginctl suspend",
   "text" : "Suspend",
   "keybind" : "u"
 }
