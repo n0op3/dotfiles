@@ -1,4 +1,10 @@
 [plugin]
-append_previewers = [
-  { name = "*", run = "hexyl" },
+append_previewers = [{ name = "*", run = "hexyl" }]
+
+[opener]
+app_image = [
+  { run = '"$0"', orphan = true, desc = "Run AppImage", for = "unix" },
 ]
+
+[open]
+prepend_rules = [{ name = "*.AppImage", use = ["app_image"] }]
