@@ -25,4 +25,5 @@ export XMODIFIERS=@im=fcitx
 export wallpapers_path=$HOME/Pictures/Wallpapers
 export PATH=$PATH:$HOME/.scripts:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/Apps
 
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 dbus-launch sway --unsupported-gpu
