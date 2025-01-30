@@ -12,10 +12,9 @@ set $term kitty
 # Your preferred application launcher
 set $menu dmenu_run
 
+exec swww-daemon
+
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/javatrix/Pictures/Wallpapers/Aesthetic/blue-waves.png fill
 #
 # Example configuration:
 #
