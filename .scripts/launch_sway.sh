@@ -25,4 +25,4 @@ export XMODIFIERS=@im=fcitx
 export wallpapers_path=$HOME/Pictures/Wallpapers
 export PATH=$PATH:$HOME/.scripts:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/Apps
 
-dbus-launch sway
+dbus-launch sway --unsupported-gpu

@@ -11,6 +11,7 @@ set $right l
 set $term kitty
 set $menu killall dmenu || dmenu_run
 set $files kitty --execute yazi
+set $logout_menu wlogout -T 250 -B 250 -L 620 -R 620 -b 2 # 2x2
 
 set $opacity 0.9
 for_window [class=".*"] opacity $opacity
@@ -54,6 +55,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+q kill
 bindsym $mod+Space exec $menu
 bindsym $mod+Alt+l exec swaylock -f
+bindsym $mod+Shift+Semicolon exec $logout_menu
 bindsym $mod+e exec $files
 
     # Drag floating windows by holding down $mod and left mouse button.
