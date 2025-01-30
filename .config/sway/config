@@ -9,7 +9,7 @@ set $up k
 set $right l
 
 set $term kitty
-set $menu dmenu_run
+set $menu killall dmenu || dmenu_run
 set $files kitty --execute yazi
 
 set $opacity 0.9
