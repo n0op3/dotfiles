@@ -1,5 +1,4 @@
 set $mod Mod4
-
 set $left h
 set $down j
 set $up k
@@ -9,10 +8,12 @@ set $term kitty
 set $menu killall dmenu || dmenu_run
 set $files kitty --execute yazi
 set $logout_menu wlogout -T 250 -B 250 -L 620 -R 620 -b 2 # 2x2
-
-set $opacity 0.9
+set $clipboard kitty --override font.size=10 --class floating --execute zsh -c 'source ~/.zshrc && clipse'
+set $opacity 0.95
 for_window [class=".*"] opacity $opacity
 for_window [app_id=".*"] opacity $opacity
+for_window [app_id="^floating$"] floating enable
+for_window [app_id="^floating$"] resize set 800 600
 
 exec autotiling
 exec swww-daemon
@@ -58,11 +59,11 @@ bindsym $mod+Space exec $menu
 bindsym $mod+Alt+l exec swaylock -f
 bindsym $mod+Shift+Semicolon exec $logout_menu
 bindsym $mod+e exec $files
+bindsym $mod+Ctrl+v exec $clipboard
 
 floating_modifier $mod normal
 
 bindsym $mod+Shift+c reload
-
 bindsym $mod+Shift+q exec swaymsg exit
 
 bindsym $mod+$left focus left
