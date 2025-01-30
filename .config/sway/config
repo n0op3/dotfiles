@@ -34,9 +34,14 @@ exec swayidle -w \
          before-sleep 'swaylock -f'
 
 ### Input configuration
-input type:touchpad {
-    tap enabled
+input "type:touchpad" {
     natural_scroll enabled
+    accel_profile "flat"
+}
+
+input "1241:64560:USB_Gaming_Mouse" {
+    accel_profile "flat"
+    pointer_accel -0.2
 }
 
 ### Key bindings
