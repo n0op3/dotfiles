@@ -17,6 +17,7 @@ set $opacity 0.9
 for_window [class=".*"] opacity $opacity
 for_window [app_id=".*"] opacity $opacity
 
+exec autotiling
 exec swww-daemon
 exec pipewire
 exec pipewire-pulse
