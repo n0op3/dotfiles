@@ -56,6 +56,9 @@ exec swayidle -w \
     # Start your launcher
     bindsym $mod+Space exec $menu
 
+    # Lock screen
+    bindsym $mod+Alt+l exec swaylock -f
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
