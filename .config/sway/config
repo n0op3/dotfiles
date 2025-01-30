@@ -47,6 +47,11 @@ input "1241:64560:USB_Gaming_Mouse" {
 	pointer_accel -0.2
 }
 
+input type:keyboard {
+    repeat_delay 200
+    repeat_rate 30
+}
+
 bindsym $mod+Return exec $term
 bindsym $mod+q kill
 bindsym $mod+Space exec $menu
