@@ -21,6 +21,7 @@ exec swww-daemon
 exec pipewire
 exec pipewire-pulse
 exec wireplumber
+exec clipse -listen
 
 ### Output configuration
 #
