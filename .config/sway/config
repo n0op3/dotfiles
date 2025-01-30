@@ -22,9 +22,17 @@ exec pipewire
 exec pipewire-pulse
 exec wireplumber
 exec clipse -listen
+exec swayosd-libinput-backend
+exec swayosd-server
 
-output DP-1 resolution 2560x1440 position 0,0
-output eDP-1 resolution 1920x1080 position 2560,0
+set $display1 "DP-1"
+set $display2 "eDP-1"
+
+output $display1 resolution 2560x1440 position 0,0
+output $display2 resolution 1920x1080 position 2560,0
+
+workspace 1 output $display1 $display2
+workspace 2 output $display2 $display1
 
 ### Idle configuration
 exec swayidle -w \
