@@ -7,10 +7,14 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
+
 set $term kitty
-# Your preferred application launcher
 set $menu dmenu_run
+set $files kitty --execute yazi
+
+set $opacity 0.9
+for_window [class=".*"] opacity $opacity
+for_window [app_id=".*"] opacity $opacity
 
 exec swww-daemon
 
@@ -43,20 +47,11 @@ exec swayidle -w \
 # Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
-#
-# Basics:
-#
-    # Start a terminal
-    bindsym $mod+Return exec $term
-
-    # Kill focused window
-    bindsym $mod+q kill
-
-    # Start your launcher
-    bindsym $mod+Space exec $menu
-
-    # Lock screen
-    bindsym $mod+Alt+l exec swaylock -f
+bindsym $mod+Return exec $term
+bindsym $mod+q kill
+bindsym $mod+Space exec $menu
+bindsym $mod+Alt+l exec swaylock -f
+bindsym $mod+e exec $files
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -133,7 +128,7 @@ exec swayidle -w \
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    # bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
