@@ -23,6 +23,9 @@ exec wireplumber
 exec clipse -listen
 exec swayosd-libinput-backend
 exec swayosd-server
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec wlsunset -T 8000 -S 8:00 -s 21:00
+exec fcitx5
 
 set $display1 "DP-1"
 set $display2 "eDP-1"
@@ -51,6 +54,10 @@ input "1241:64560:USB_Gaming_Mouse" {
 input type:keyboard {
     repeat_delay 200
     repeat_rate 30
+}
+
+input * {
+	xkb_layout "pl"
 }
 
 bindsym $mod+Return exec $term
@@ -143,7 +150,9 @@ bar {
 
 		colors {
 			statusline #ffffff
-				background #111111
+			background #111111
+			focused_workspace #921de0 #111111 #ffffff
+			inactive_workspace #3a1382 #222222 #cccccf
 		}
 }
 
