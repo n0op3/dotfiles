@@ -5,7 +5,7 @@ set $up k
 set $right l
 
 set $term kitty
-set $menu killall dmenu || dmenu_run
+set $menu killall rofi || rofi -show drun
 set $files kitty --execute yazi
 set $logout_menu wlogout -T 250 -B 250 -L 620 -R 620 -b 2 # 2x2
 set $clipboard kitty --override font.size=10 --class floating --execute zsh -c 'source ~/.zshrc && clipse'
