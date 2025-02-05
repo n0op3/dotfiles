@@ -10,10 +10,29 @@ set $files kitty --execute yazi
 set $logout_menu wlogout -T 250 -B 250 -L 620 -R 620 -b 2 # 2x2
 set $clipboard kitty --override font.size=10 --class floating --execute zsh -c 'source ~/.zshrc && clipse'
 set $opacity 0.95
-for_window [class=".*"] opacity $opacity
-for_window [app_id=".*"] opacity $opacity
+
+for_window [all] opacity $opacity
 for_window [app_id="^floating$"] floating enable
 for_window [app_id="^floating$"] resize set 800 600
+
+# Colors
+include ~/.cache/wal/colors-sway
+
+bar {
+    position top
+
+    status_command while true; do echo "$(cat /sys/class/power_supply/BAT0/capacity)% $(date -u '+%Y-%m-%d %H:%M:%S')"; sleep 1; done
+
+    colors {
+        statusline #ffffff
+        background #111111
+        focused_workspace #921de0 #111111 #ffffff
+        inactive_workspace #3a1382 #222222 #cccccf
+    }
+}
+
+client.focused $color1 $background $foreground $color3 $color4
+client.unfocused $color2 $background $foreground $color5 $color6
 
 # WM stuff
 exec autotiling
@@ -47,18 +66,18 @@ workspace 1 output $display1 $display2
 workspace 2 output $display2 $display1
 
 exec swayidle -w \
-	     timeout 120 'swaylock -f' \
-	     timeout 125 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-	     before-sleep 'swaylock -f'
+    timeout 120 'swaylock -f' \
+    timeout 125 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+    before-sleep 'swaylock -f'
 
-	     input "type:touchpad" {
-		     natural_scroll enabled
-			     accel_profile "flat"
-	     }
+input "type:touchpad" {
+    natural_scroll enabled
+    accel_profile "flat"
+}
 
 input "1241:64560:USB_Gaming_Mouse" {
-	accel_profile "flat"
-	pointer_accel -0.2
+    accel_profile "flat"
+    pointer_accel -0.2
 }
 
 input type:keyboard {
@@ -67,8 +86,11 @@ input type:keyboard {
 }
 
 input * {
-	xkb_layout "pl"
+    xkb_layout "pl"
 }
+
+floating_modifier $mod normal
+mouse_warping container
 
 bindsym $mod+Return exec $term
 bindsym $mod+q kill
@@ -77,8 +99,6 @@ bindsym $mod+Alt+l exec swaylock -f
 bindsym $mod+Shift+Semicolon exec $logout_menu
 bindsym $mod+e exec $files
 bindsym $mod+Ctrl+v exec $clipboard
-
-floating_modifier $mod normal
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+q exec swaymsg exit
@@ -130,13 +150,13 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 mode "resize" {
-	bindsym $left resize shrink width 10px
-		bindsym $down resize grow height 10px
-		bindsym $up resize shrink height 10px
-		bindsym $right resize grow width 10px
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
 
-		bindsym Return mode "default"
-		bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
@@ -150,23 +170,3 @@ bindsym --locked XF86AudioPrev exec playerctl previous
 
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-
-bindsym Print exec grim
-
-bar {
-	position top
-
-		status_command while true; do echo "$(cat /sys/class/power_supply/BAT0/capacity)% $(date -u '+%Y-%m-%d %H:%M:%S')"; sleep 1; done
-
-		colors {
-			statusline #ffffff
-			background #111111
-			focused_workspace #921de0 #111111 #ffffff
-			inactive_workspace #3a1382 #222222 #cccccf
-		}
-}
-
-client.focused #921de0 #111111 #ffffff #f91317 #1d7ee0
-client.unfocused #3a1382 #222222 #cccccf #a31114 #123e96
-
-include /etc/sway/config.d/*
