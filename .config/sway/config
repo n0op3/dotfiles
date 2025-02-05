@@ -15,17 +15,27 @@ for_window [app_id=".*"] opacity $opacity
 for_window [app_id="^floating$"] floating enable
 for_window [app_id="^floating$"] resize set 800 600
 
+# WM stuff
 exec autotiling
 exec swww-daemon
+
+# Audio
 exec pipewire
 exec pipewire-pulse
 exec wireplumber
+
+# Backends and daemons
 exec clipse -listen
 exec swayosd-libinput-backend
 exec swayosd-server
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec wlsunset -T 8000 -S 8:00 -s 21:00
 exec fcitx5
+
+# Messengers
+exec signal-desktop --start-in-tray
+exec vesktop --start-minimized
+exec ~/Apps/Caprine.AppImage
 
 set $display1 "DP-1"
 set $display2 "eDP-1"
