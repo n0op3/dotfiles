@@ -61,7 +61,7 @@ alias nv='nvim'
 alias xopen='xdg-open'
 alias ls='lsd'
 alias lsa='lsd -la'
-alias rm='~/.cargo/bin/safe-rm --graveyard ~/.local/share/Trash'
+alias rm='safe-rm --graveyard ~/.local/share/Trash'
 alias cat='bat'
 alias grep='rg'
 alias g='git'
@@ -103,5 +103,3 @@ zstyle ':completion:*' menu no
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls $realpath'
-
-export PATH=$PATH:/home/javatrix/.millennium/ext/bin

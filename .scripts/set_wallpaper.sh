@@ -1,5 +1,5 @@
 #!/bin/sh
-ps aux | grep 'set_wallpaper.sh' | grep -v $$ | awk '{print $2}' | xargs kill # Kill other set_wallpapers
+# ps aux | grep 'set_wallpaper.sh' | grep -v $$ | awk '{print $2}' | xargs kill # Kill other set_wallpapers
 
 swww img $1 --transition-type center --transition-duration 0.25 --transition-fps 30
 
