@@ -1,0 +1,14 @@
+@theme "~/.config/rofi/configs/minimal/config.rasi"
+
+configuration {
+	display-drun: "Select a window";
+}
+
+element-icon {
+	size: 64 px;
+}
+
+listview {
+	columns: 4;
+	lines: 4;
+}
