@@ -1,7 +1,7 @@
 @theme "~/.config/rofi/configs/minimal/config.rasi"
 
 configuration {
-	display-drun: "Select a window";
+    display-window: "Switch to a window:";
 }
 
 element-icon {
@@ -9,6 +9,6 @@ element-icon {
 }
 
 listview {
-	columns: 4;
+	columns: 1;
 	lines: 4;
 }
