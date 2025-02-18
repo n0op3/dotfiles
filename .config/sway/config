@@ -15,8 +15,9 @@ for_window [all] opacity $opacity
 for_window [app_id="^floating$"] floating enable
 for_window [app_id="^floating$"] resize set 800 600
 
-# Colors
 include ~/.cache/wal/colors-sway
+
+font pango:"etBrainsMono Nerd Font 10
 
 bar {
     position top
