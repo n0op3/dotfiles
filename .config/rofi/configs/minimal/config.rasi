@@ -1,9 +1,4 @@
-@theme "/dev/null"
-
-* {
-	bg: #181E27;
-	background-color: @bg;
-}
+@theme "~/.cache/wal/colors-rofi-dark.rasi"
 
 configuration {
 	show-icons: true;
@@ -18,7 +13,6 @@ window {
 	transparency: "real";
 	orientation: vertical;
     border: 2px solid;
-	border-color: #bb4cdf;
     border-radius: 4px;
 }
 
@@ -28,12 +22,10 @@ mainbox {
 
 element {
 	padding: 4 12;
-	text-color: #EFE7DD;
 }
 
 element selected {
   border-radius: 4px;
-	background-color: #bb4cdf;
 }
 
 element-text {
@@ -59,7 +51,6 @@ listview {
 }
 
 entry {
-	text-color: #EFE7DD;
 	padding: 10 10 0 0;
 	margin: 0 0 0 0;
 }
@@ -69,7 +60,6 @@ inputbar {
 } 
 
 prompt {
-	text-color: #aaffaa;
 	padding: 10 6 0 10;
 	margin: 0 -2 0 0;
 }

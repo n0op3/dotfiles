@@ -46,6 +46,7 @@ exec swayosd-server
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec wlsunset -T 8000 -S 8:00 -s 21:00
 exec fcitx5
+exec kdeconnectd
 
 exec pipewire
 exec wireplumber
