@@ -17,7 +17,7 @@ for_window [app_id="^floating$"] resize set 800 600
 
 include ~/.cache/wal/colors-sway
 
-font pango:"etBrainsMono Nerd Font 10
+font pango:JetBrainsMono Nerd Font 10
 
 bar {
     position top
@@ -27,8 +27,8 @@ bar {
     colors {
         statusline #ffffff
         background #111111
-        focused_workspace #921de0 #111111 #ffffff
-        inactive_workspace #3a1382 #222222 #cccccf
+        focused_workspace $color2 $background $foreground
+        inactive_workspace $background #222222 $foreground
     }
 }
 
