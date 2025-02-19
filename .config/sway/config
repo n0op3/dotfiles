@@ -39,11 +39,6 @@ client.unfocused $color2 $background $foreground $color5 $color6
 exec autotiling
 exec swww-daemon
 
-# Audio
-exec pipewire
-exec pipewire-pulse
-exec wireplumber
-
 # Backends and daemons
 exec clipse -listen
 exec swayosd-libinput-backend
