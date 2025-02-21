@@ -1,7 +1,7 @@
 [[manager.prepend_keymap]]
 on = "<C-A-w>"
 run = '''
-  shell 'set_wallpaper.sh $1 && regen_pywal.sh && reload_hyprpanel.sh && reload_ulauncher.sh'
+  shell 'set_wallpaper.sh $1; regen_pywal.sh; reload_hyprpanel.sh; reload_ulauncher.sh'
 '''
 desc = "Set the current image as a wallpaper"
 

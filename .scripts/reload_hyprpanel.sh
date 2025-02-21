@@ -1,3 +1,3 @@
 #!/bin/bash
 hyprpanel -q 
-start-stop-daemon hyprpanel &
+start-stop-daemon --start hyprpanel &
