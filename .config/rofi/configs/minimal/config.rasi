@@ -1,5 +1,9 @@
 @theme "~/.cache/wal/colors-rofi-dark.rasi"
 
+textbox-prompt-colon {
+    str: "";
+}
+
 configuration {
 	show-icons: true;
 	icon-theme: "Papirus";
