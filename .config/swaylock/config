@@ -3,9 +3,9 @@ indicator
 clock
 
 # Visuals
-indicator-image=/home/javatrix/.cache/current_wallpaper.png
-image=/home/javatrix/.cache/current_wallpaper.png
-effect-blur=8x8
+indicator-image=/home/aitokea/.cache/current_wallpaper.png
+image=/home/aitokea/.cache/current_wallpaper.png
+effect-blur=8x4
 
 # Behavior
 ignore-empty-password
@@ -36,7 +36,7 @@ ring-caps-lock-color=fab387
 ring-ver-color=89b4fa
 ring-wrong-color=eba0ac
 separator-color=00000000
-text-color=cdd6f4
+text-color=000000
 text-clear-color=66e6b36
 text-caps-lock-color=fab387
 text-ver-color=89b4fa
