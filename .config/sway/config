@@ -50,9 +50,6 @@ exec wlsunset -T 8000 -S 8:00 -s 21:00
 exec fcitx5
 exec kdeconnectd
 
-exec pipewire
-exec wireplumber
-
 # Messengers
 exec signal-desktop --start-in-tray
 exec vesktop --start-minimized
