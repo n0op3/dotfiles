@@ -5,7 +5,6 @@ export GDK_BACKEND=wayland
 export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
-export QT_QPA_PLATFORM=wayland
 export XCURSOR_THEME=Bibata-Modern-Ice
 export XCURSOR_SIZE=24
 export GDK_BACKEND=wayland,x11,xcb
