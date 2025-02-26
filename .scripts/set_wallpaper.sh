@@ -4,4 +4,6 @@
 swww img $1 --transition-type center --transition-duration 0.25 --transition-fps 30
 
 cp $1 ~/.cache/current_wallpaper.png
+cp $1 ~/.cache/current_wallpaper.jpg
+cp $1 ~/.cache/current_wallpaper
 cp $1 ~/.config/rofi/background.png
