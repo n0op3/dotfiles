@@ -92,7 +92,8 @@
     "7": "七",
     "8": "八",
     "9": "九",
-    "10": "十"
+    "10": "十",
+    "-99": ""
   },
   "bar.windowtitle.icon": true,
   "theme.bar.buttons.clock.enableBorder": false,
