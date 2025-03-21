@@ -70,7 +70,7 @@
   "theme.bar.buttons.dashboard.icon": "#dc8add",
   "theme.bar.buttons.dashboard.border": "#613583",
   "theme.matugen": true,
-  "wallpaper.image": "/home/aitokea/.cache/current_wallpaper.png",
+  "wallpaper.image": "/home/aitokea/.cache/current_wallpaper.jpg",
   "theme.bar.menus.monochrome": false,
   "menus.transition": "crossfade",
   "menus.transitionTime": 125,
@@ -169,7 +169,5 @@
   "theme.bar.menus.menu.power.scaling": 80,
   "theme.tooltip.scaling": 80,
   "theme.bar.menus.popover.scaling": 80,
-  "notifications.ignore": [
-    "tidal-hifi"
-  ]
+  "notifications.ignore": []
 }
