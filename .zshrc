@@ -102,3 +102,5 @@ zstyle ':completion:*' menu no
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls $realpath'
+
+export PATH=$PATH:/home/aitokea/.millennium/ext/bin

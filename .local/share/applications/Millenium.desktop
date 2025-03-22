@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Millenium
+Comment=A Steam client
+Exec=/home/aitokea/.millennium/start.sh
+Icon=steam
+Terminal=false
+Type=Application
+Categories=Game;
