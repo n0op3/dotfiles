@@ -1,0 +1,67 @@
+help config nu
+config nu --doc | nu-highlight
+config nu --doc | nu-highlight | less
+config nu --doc | nu-highlight | nvim
+nvim <(config nu --doc | nu-highlight)
+ls
+clear
+fastfetch
+clear
+kitty --exec nu
+ls
+kitty --execute nu
+config nu
+clear
+cd notes
+cd Notes
+kitty --execute nu
+cd Notes
+z Note
+z Notes
+clear
+nu
+l
+ls
+clear
+cp
+which cp
+ls
+cp
+clear
+ls -la
+clear
+cat
+cat config.txt
+which cat
+cat config.txt
+config nu
+nu
+clear
+ls
+ls | where name == *d*
+ls | where name has d
+ls | where name has D
+ls | where name has d or name has D
+clear
+.scripts/update_with_backup.sh
+clear
+ls
+lsa
+cd nushell
+clear
+cd .config/nushell/
+clear
+nv config.nu 
+cd .config/nushell/
+nv config.nu 
+nvim
+clear
+clera
+clear
+cd home
+nv config.nu 
+cd 
+cd home_stow/
+clear
+ls
+gst
