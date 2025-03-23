@@ -11,4 +11,4 @@ swww img $1 --transition-type center --transition-duration 0.25 --transition-fps
 cp $1 ~/.cache/current_wallpaper.png
 cp $1 ~/.cache/current_wallpaper.jpg
 cp $1 ~/.cache/current_wallpaper
-cp $1 ~/.config/rofi/background.png
+magick .cache/current_wallpaper.png -resize 1000x400 ~/.config/rofi/background.png # to speed up rofi image loading times
