@@ -39,7 +39,7 @@ window {
     anchor:                      center;
     fullscreen:                  false;
     width:                       30%;
-    height:                      50%;
+    height:                      680px;
     x-offset:                    0px;
     y-offset:                    0px;
 
