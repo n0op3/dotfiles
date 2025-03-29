@@ -169,7 +169,9 @@
   "theme.bar.menus.menu.power.scaling": 80,
   "theme.tooltip.scaling": 80,
   "theme.bar.menus.popover.scaling": 80,
-  "notifications.ignore": [],
+  "notifications.ignore": [
+    "tidal-hifi"
+  ],
   "theme.bar.enableShadow": false,
   "bar.workspaces.show_icons": false,
   "theme.bar.buttons.windowtitle.enableBorder": true,
