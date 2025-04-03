@@ -5,7 +5,7 @@ backup() {
 }
 
 echo "Checking whether a backup is advised..."
-packages=$(paru -Quq | grep -i -E "linux|nvidia|hypr")
+packages=$(paru -Quq | grep -i -E "linux|nvidia|hyprland|hyprutils|hyprlang|aquamarine|sway")
 backup_needed=$?
 
 if [[ $backup_needed ]]; then
