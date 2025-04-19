@@ -1,6 +1,6 @@
 {
   "bar.customModules.updates.pollingInterval": 1440000,
-  "menus.dashboard.powermenu.avatar.image": "~/Pictures/pfp/1879345164.jpg",
+  "menus.dashboard.powermenu.avatar.image": "~/.face.icon",
   "theme.bar.floating": true,
   "bar.autoHide": "fullscreen",
   "theme.bar.buttons.enableBorders": true,
