@@ -3,8 +3,8 @@ indicator
 clock
 
 # Visuals
-indicator-image=/home/aitokea/.cache/current_wallpaper.png
-image=/home/aitokea/.cache/current_wallpaper.png
+indicator-image=~/.cache/current_wallpaper.png
+image=~/.cache/current_wallpaper.png
 effect-blur=8x4
 
 # Behavior

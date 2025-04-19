@@ -1,6 +1,6 @@
 {
   "bar.customModules.updates.pollingInterval": 1440000,
-  "menus.dashboard.powermenu.avatar.image": "/home/aitokea/Pictures/pfp/1879345164.jpg",
+  "menus.dashboard.powermenu.avatar.image": "~/Pictures/pfp/1879345164.jpg",
   "theme.bar.floating": true,
   "bar.autoHide": "fullscreen",
   "theme.bar.buttons.enableBorders": true,
@@ -70,7 +70,7 @@
   "theme.bar.buttons.dashboard.icon": "#f9e2af",
   "theme.bar.buttons.dashboard.border": "#f9e2af",
   "theme.matugen": true,
-  "wallpaper.image": "/home/aitokea/.cache/current_wallpaper.jpg",
+  "wallpaper.image": "~/.cache/current_wallpaper.jpg",
   "theme.bar.menus.monochrome": false,
   "menus.transition": "crossfade",
   "menus.transitionTime": 125,

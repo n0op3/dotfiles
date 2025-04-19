@@ -1,3 +1,0 @@
-Name=Sway (NVIDIA)
-Exec=sh /home/aitokea/.scripts/launch_sway.sh
-Environment=wayland
