@@ -5,6 +5,12 @@ append_previewers = [{ name = "*", run = "hexyl" }]
 app_image = [
   { run = '"$0"', orphan = true, desc = "Run AppImage", for = "unix" },
 ]
+java = [
+  { run = 'java -jar "$@"', desc = "Run with Java", orphan = true, for = "unix" },
+]
 
 [open]
-prepend_rules = [{ name = "*.AppImage", use = ["app_image"] }]
+prepend_rules = [
+  { name = "*.AppImage", use = ["app_image"] },
+  { name = "*.jar", use = ["java"] },
+]
