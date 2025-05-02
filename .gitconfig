@@ -1,0 +1,11 @@
+[user]
+	email = otakushizukana@gmail.com
+	name = ShizukanaYaseotoko
+[credential]
+	helper = 
+	helper = /usr/bin/git-credential-manager
+	credentialStore = plaintext
+[init]
+	defaultBranch = main
+[credential "https://github.com"]
+	username = ShizukanaYaseotoko
