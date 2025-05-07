@@ -81,7 +81,11 @@
     "scalingPriority": "hyprland",
     "bar.autoHide": "fullscreen",
     "theme.bar.outer_spacing": "0.4em",
-    "wallpaper.pywal": true,
+    "wallpaper.pywal": false,
     "menus.clock.time.military": true,
-    "menus.clock.weather.location": "Cracow"
+    "menus.clock.weather.location": "Cracow",
+    "wallpaper.image": "/home/yaseotoko/.cache/current_wallpaper.png",
+    "wallpaper.enable": false,
+    "theme.matugen": true,
+    "bar.network.truncation": false
 }
