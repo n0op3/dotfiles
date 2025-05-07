@@ -69,7 +69,7 @@
   "theme.bar.transparent": true,
   "theme.bar.buttons.dashboard.icon": "#f9e2af",
   "theme.bar.buttons.dashboard.border": "#f9e2af",
-  "theme.matugen": true,
+  "theme.matugen": false,
   "wallpaper.image": "~/.cache/current_wallpaper.jpg",
   "theme.bar.menus.monochrome": false,
   "menus.transition": "crossfade",
