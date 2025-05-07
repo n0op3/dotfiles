@@ -81,5 +81,7 @@
     "scalingPriority": "hyprland",
     "bar.autoHide": "fullscreen",
     "theme.bar.outer_spacing": "0.4em",
-    "wallpaper.pywal": true
+    "wallpaper.pywal": true,
+    "menus.clock.time.military": true,
+    "menus.clock.weather.location": "Cracow"
 }
