@@ -87,5 +87,8 @@
     "wallpaper.image": "/home/yaseotoko/.cache/current_wallpaper.png",
     "wallpaper.enable": false,
     "theme.matugen": true,
-    "bar.network.truncation": false
+    "bar.network.truncation": false,
+    "theme.matugen_settings.scheme_type": "content",
+    "theme.matugen_settings.variation": "standard_3",
+    "theme.matugen_settings.mode": "dark"
 }
