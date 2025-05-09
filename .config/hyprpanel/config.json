@@ -88,7 +88,7 @@
     "wallpaper.enable": false,
     "theme.matugen": true,
     "bar.network.truncation": false,
-    "theme.matugen_settings.scheme_type": "content",
+    "theme.matugen_settings.scheme_type": "fidelity",
     "theme.matugen_settings.variation": "standard_3",
     "theme.matugen_settings.mode": "dark",
     "menus.clock.weather.unit": "metric",
