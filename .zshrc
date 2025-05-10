@@ -53,7 +53,8 @@ function y() {
 }
 
 # Aliases
-alias cp='fcp'
+alias cp='rsync -aP'
+alias mv='rsync --remove-source-files -aP'
 alias nv='nvim'
 alias xopen='xdg-open'
 alias ls='lsd'
