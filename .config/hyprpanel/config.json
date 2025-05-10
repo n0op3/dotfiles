@@ -96,5 +96,6 @@
     "bar.clock.showTime": true,
     "bar.clock.format": "%a %b %d  %H:%M:%S",
     "menus.volume.raiseMaximumVolume": true,
-    "bar.scrollSpeed": 1
+    "bar.scrollSpeed": 1,
+    "notifications.clearDelay": 10
 }
