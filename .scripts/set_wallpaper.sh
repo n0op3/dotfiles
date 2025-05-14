@@ -12,4 +12,4 @@ cp $1 ~/.cache/current_wallpaper.png
 cp $1 ~/.cache/current_wallpaper.jpg
 cp $1 ~/.cache/current_wallpaper
 rm ~/.config/rofi/background.png
-magick .cache/current_wallpaper.png -resize 1000x400 ~/.config/rofi/background.png # to speed up rofi image loading times
+magick ~/.cache/current_wallpaper.png -resize 1000x400 ~/.config/rofi/background.png # to speed up rofi image loading times
