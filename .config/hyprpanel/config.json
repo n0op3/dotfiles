@@ -53,7 +53,8 @@
   "theme.tooltip.scaling": 80,
   "theme.bar.menus.popover.scaling": 80,
   "notifications.ignore": [
-    "tidal-hifi"
+    "tidal-hifi",
+    "Spotify"
   ],
   "theme.osd.margins": "8px 8px 8px 8px",
   "theme.osd.orientation": "vertical",
