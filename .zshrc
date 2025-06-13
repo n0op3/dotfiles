@@ -53,19 +53,7 @@ function y() {
 }
 
 # Aliases
-alias cp='rsync -aP'
-alias mv='rsync --remove-source-files -aP'
-alias v='nvim'
-alias xopen='xdg-open'
-alias ls='lsd'
-alias lsa='lsd -la'
-alias cat='bat'
-alias grep='rg'
-alias g='git'
-alias ga='git add'
-alias gst='git status'
-alias gl='git log --oneline --graph --decorate'
-alias cm='git commit -am'
+source ~/.zsh_aliases
 
 # Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
