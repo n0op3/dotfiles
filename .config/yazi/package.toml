@@ -1,12 +1,12 @@
 [[plugin.deps]]
 use = "Reledia/hexyl"
-rev = "39d3d4e"
-hash = "dd624cbaff94af65f39fd86bc57b340"
+rev = "016a09b"
+hash = "50da29476e744dba37d77fb209328fd1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mount"
-rev = "864a021"
-hash = "dd97eede8e20e59cd2604e8006e470e2"
+rev = "7c174cc"
+hash = "b3f1d6ec3721d4061aad5f69cddb0cf9"
 
 [flavor]
 deps = []
