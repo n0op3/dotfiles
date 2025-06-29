@@ -1,11 +1,12 @@
-# source ~/.zsh_aliases
+source ~/.zsh_functions
 
 #eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)" # Oh My Posh
-eval "$(starship init zsh)"                                               # Starship
+eval "$(starship init zsh)"                                                # Starship
 
 # Apply pywal colors
-(cat ~/.cache/wal/sequences &)
-source ~/.cache/wal/colors-tty.sh
+if [ -d "$HOME/.cache/wal" ]; then
+    apply_pywal_colors;
+fi
 
 # FZF
 source <(fzf --zsh)
