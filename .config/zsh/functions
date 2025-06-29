@@ -1,4 +1,7 @@
+#!/bin/bash
 apply_pywal_colors () {
-    (cat ~/.cache/wal/sequences &)
-    source ~/.cache/wal/colors-tty.sh
+    if [ -f ~/.cache/pywal_on ]; then
+        (cat ~/.cache/wal/sequences &)
+        source ~/.cache/wal/colors-tty.sh
+    fi
 }
