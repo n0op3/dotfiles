@@ -8,7 +8,7 @@ if [ -f "$HOME/.cache/pywal_on" ]; then
     echo "\$color1 = 0xFF4BE875
           \$color4 = 0xFF85E0F4" > ~/.cache/wal/colors-hyprland.conf
 else
-    regen_pywal.sh
+    ~/.scripts/regen_pywal.sh
     touch ~/.cache/pywal_on
 fi
 
