@@ -1,7 +1,7 @@
 #!/bin/bash
 
 backup() {
-    sudo restic --repo /backups backup /bin /boot /etc /lib /lib64 /sbin /usr
+    sudo timeshift --create
 }
 
 echo "Checking whether a backup is advised..."
