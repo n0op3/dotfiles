@@ -9,8 +9,8 @@ if [ -f "$HOME/.cache/pywal_on" ]; then
           \$color4 = 0xFF85E0F4" > ~/.cache/wal/colors-hyprland.conf
     notify-send "Pywal off"
 else
-    ~/.scripts/regen_pywal.sh
     touch ~/.cache/pywal_on
+    ~/.scripts/regen_pywal.sh
     notify-send "Pywal on"
 fi
 
