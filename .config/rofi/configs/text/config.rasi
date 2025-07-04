@@ -14,7 +14,7 @@ configuration {
 window {
     width: 40%;
     border: 2px solid;
-    border-color: @active-background;
+    border-color: @selected-active-background;
 }
 
 listview {
