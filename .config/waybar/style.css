@@ -67,6 +67,7 @@ window#waybar {
 
 #workspaces {
     margin-left: 2px;
+    padding-left: 8px;
     padding-right: 8px;
     margin-right: 32px;
 }
