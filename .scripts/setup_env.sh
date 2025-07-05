@@ -27,7 +27,7 @@ install_toolchains() {
 
 install_deps() {
     # Utilities
-    paru -S --needed --noconfirm timeshift man-db tldr ufw
+    paru -S --needed --noconfirm timeshift man-db tldr ufw stow
     # Desktop Environment
     paru -S --needed --noconfirm hyprland hyprlock hypridle uwsm waybar brigthnessctl rofi-wayland fcitx5 fcitx5-configtool fcitx5-mozc kitty mpv playerctl iwgtk clipse zen-browser-bin
     # Theming
@@ -40,6 +40,7 @@ setup() {
     sudo usermod -aG games power docker video audio $USER
     sudo usermod -s /bin/zsh $USER
     sudo ufw enable
+    stow .
 }
 
 install_toolchains
