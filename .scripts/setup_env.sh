@@ -1,6 +1,12 @@
 #!/bin/sh
 
 install_toolchains() {
+    if ! type rustup > /dev/null; then
+        echo "Setting up Rust..."
+        sudo pacman -S rustup --noconfirm
+        rustup default stable
+    fi
+
     if ! type paru > /dev/null; then
         echo "Paru is not installed, cloning..."
         git clone https://aur.archlinux.org/paru /tmp/paru
@@ -19,10 +25,7 @@ install_toolchains() {
         rm -rf /tmp/paru
     fi
 
-    echo "Paru is installed, proceeding..."
-
-    paru -S --needed --noconfirm rustup
-    rustup default stable
+    echo "Paru is installed"
 }
 
 install_deps() {
