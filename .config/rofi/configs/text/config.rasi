@@ -8,7 +8,7 @@ configuration {
 	show-icons: true;
 	location: 0;
 	font: "JetBrainsMono Nerd Font 12";	
-	display-drun: "Launch";
+	display-drun: "打ち上げ:";
 }
 
 window {

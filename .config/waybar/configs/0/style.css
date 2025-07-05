@@ -1,48 +1,55 @@
+@import '../../.cache/wal/colors-waybar.css';
+
 * {
-  border-radius: 0;
-  font-family: "JetbrainsMono Nerd Font";
-  font-size: 16;
-  min-height: 10px;
-  padding-left: 8px;
-  padding-right: 8px;
+    border-radius: 0;
+    font-family: "JetbrainsMono Nerd Font";
+    font-size: 16;
+    min-height: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 window#waybar {
-  background: #1E1E2F;
-  border-radius: 8px;
+    background: @background;
+    border-radius: 0px;
 }
 
 #cpu {
-  color: #59C2FF;
+    color: @color1;
 }
 
 #memory {
-  color: #A6E3A2;
+    color: @color2;
 }
 
 #custom-media {
-  color: #F28FAD;
+    color: @color3;
 }
 
 #clock {
-  color: #F696FF;
+    color: @color4;
 }
 
 #battery.critical:not(.charging) {
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 @keyframes blink {
-  to {
-    background-color: #F28FAD;
-    color: #15141B;
-  }
+    to {
+        background-color: #F28FAD;
+        color: #15141B;
+    }
 }
 
 #pulseaudio {
-  color: #FCE196;
+    color: @color5;
+}
+
+#workspaces button {
+    padding: 0px;
+    margin: 0px;
 }
