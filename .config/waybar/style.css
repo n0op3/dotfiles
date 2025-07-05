@@ -1,1 +1,83 @@
-./configs/0/style.css
+@import '../../.cache/wal/colors-waybar.css';
+
+* {
+    border-radius: 4px;
+    font-family: "JetbrainsMono Nerd Font";
+    font-size: 16px;
+    min-height: 10px;
+    margin: 0px 0px 1px 4px;
+    padding-right: 4px;
+    padding-left: 4px;
+}
+
+window#waybar {
+    background: @background;
+    border-radius: 0px;
+    border-bottom: 2px solid @foreground;
+}
+
+#cpu {
+    color: @color1;
+}
+
+#memory {
+    color: @color2;
+}
+
+#custom-media {
+    color: @color3;
+}
+
+#clock {
+    color: @color4;
+}
+
+#cpu, #memory, #clock {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#battery {
+    color: @color9;
+}
+
+#cpu, #memory, #clock, #battery, #pulseaudio, #workspaces {
+    background: mix(shade(@background, 1.5), rgb(77, 77, 77), 0.5);
+    margin-bottom: 4px;
+}
+
+#battery.critical:not(.charging) {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #F28FAD;
+        color: #15141B;
+    }
+}
+
+#pulseaudio {
+    color: @color5;
+}
+
+#workspaces {
+    margin-left: 2px;
+    padding-right: 8px;
+    margin-right: 32px;
+}
+
+#workspaces button {
+    color: @color6;
+    padding: 1px;
+}
+
+#workspaces button.active {
+    font-family: bold;
+    background: @color4;
+    color: @background;
+}
