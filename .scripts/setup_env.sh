@@ -4,8 +4,8 @@ install_toolchains() {
     if ! type rustup > /dev/null; then
         echo "Setting up Rust..."
         sudo pacman -S rustup --noconfirm
-        rustup default stable
     fi
+    rustup default stable
 
     if ! type paru > /dev/null; then
         echo "Paru is not installed, cloning..."
