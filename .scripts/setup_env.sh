@@ -32,7 +32,7 @@ install_deps() {
     # Utilities
     paru -S --needed --noconfirm timeshift man-db tldr ufw stow
     # Desktop Environment
-    paru -S --needed --noconfirm hyprland hyprlock hypridle uwsm waybar brigthnessctl rofi-wayland fcitx5 fcitx5-configtool fcitx5-mozc kitty mpv playerctl iwgtk clipse zen-browser-bin
+    paru -S --needed --noconfirm hyprland hyprlock hypridle uwsm waybar brigthnessctl rofi-wayland fcitx5 fcitx5-configtool fcitx5-mozc kitty mpv playerctl iwgtk clipse zen-browser-bin rofi-power-menu rofi-emoji
     # Theming
     paru -S --needed --noconfirm python-pywal16 swww walcord
     # Shell
