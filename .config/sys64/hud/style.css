@@ -17,7 +17,7 @@
 }
 
 #syshud label {
-	color: alpha(@foreground, 0.5);
+	color: @foreground;
 }
 
 /* Vertical layout */

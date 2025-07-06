@@ -1,5 +1,5 @@
 #!/bin/sh
-# ps aux | grep 'set_wallpaper.sh' | grep -v $$ | awk '{print $2}' | xargs kill # Kill other set_wallpapers
+ps aux | grep 'set_wallpaper.sh' | grep -v $$ | awk '{print $2}' | xargs kill # Kill other set_wallpapers
 
 filter=""
 if identify ~/.cache/current_wallpaper | grep GIF; then

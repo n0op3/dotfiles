@@ -10,3 +10,4 @@ fi
 
 walcord # Vesktop theme update
 pywalfox update # Refresh firefox theme
+killall syshud && syshud -o v -p right # Reload the OSD
