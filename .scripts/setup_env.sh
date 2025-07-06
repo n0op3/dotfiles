@@ -37,7 +37,7 @@ install_deps() {
 
         # Desktop environment
         hyprland hyprlock hypridle uwsm
-        waybar brigthness rofi-wayland
+        waybar brightnessctl rofi-wayland
         fcitx5 fcitx5-configtool fcitx5-mozc
         kitty mpv playerctl iwgtk clipse
         zen-browser-bin rofi-power-menu
