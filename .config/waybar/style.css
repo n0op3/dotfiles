@@ -78,7 +78,6 @@ window#waybar {
 }
 
 #workspaces button.active {
-    font-family: bold;
     background: @color4;
     color: @background;
 }
