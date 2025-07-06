@@ -1,13 +1,15 @@
 #!/bin/sh
 
 install_toolchains() {
-    if ! type rustup > /dev/null; then
-        echo "Setting up Rust..."
+    if ! type rustup > /dev/null 2>&1; then
+        echo "Installing Rust..."
         sudo pacman -S rustup --noconfirm
     fi
+
+    echo "Setting up Rust..."
     rustup default stable
 
-    if ! type paru > /dev/null; then
+    if ! paru --version > /dev/null 2>&1; then
         echo "Paru is not installed, cloning..."
         git clone https://aur.archlinux.org/paru /tmp/paru
         cd /tmp/paru
@@ -29,18 +31,31 @@ install_toolchains() {
 }
 
 install_deps() {
-    # Utilities
-    paru -S --needed --noconfirm timeshift man-db tldr ufw stow
-    # Desktop Environment
-    paru -S --needed --noconfirm hyprland hyprlock hypridle uwsm waybar brigthnessctl rofi-wayland fcitx5 fcitx5-configtool fcitx5-mozc kitty mpv playerctl iwgtk clipse zen-browser-bin rofi-power-menu rofi-emoji
-    # Theming
-    paru -S --needed --noconfirm python-pywal16 swww walcord
-    # Shell
-    paru -S --needed --noconfirm neovim starship oh-my-posh-bin tmux yazi zsh fastfetch fzf zinit fd git zoxide
+    packages=(
+        # Utilities
+        timeshift man-db tldr ufw stow
+
+        # Desktop environment
+        hyprland hyprlock hypridle uwsm
+        waybar brigthness rofi-wayland
+        fcitx5 fcitx5-configtool fcitx5-mozc
+        kitty mpv playerctl iwgtk clipse
+        zen-browser-bin rofi-power-menu
+        rofi-emoji syshud
+
+        # Theming
+        python-pywal16 swww walcord
+
+        # Shell
+        neovim starship oh-my-posh-bin tmux
+        yazi zsh fastfetch fzf zinit fd git zoxide
+        )
+
+        paru -S --needed --noconfirm "${packages[@]}"
 }
 
 setup() {
-    sudo usermod -aG games power docker video audio $USER
+    sudo usermod -aG games,power,video,audio $USER
     sudo usermod -s /bin/zsh $USER
     sudo ufw enable
     stow .
