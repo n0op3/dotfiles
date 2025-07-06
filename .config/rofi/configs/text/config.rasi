@@ -12,6 +12,7 @@ configuration {
 }
 
 window {
+    border-radius: 8px;
     width: 40%;
     border: 2px solid;
     border-color: @selected-active-background;
