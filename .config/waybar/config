@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "mode": "dock",
-    "modules-left": ["hyprland/workspaces", "cpu", "memory", "battery"],
+    "modules-left": ["hyprland/workspaces", "cpu", "memory", "battery", "backlight"],
     "modules-center": ["custom/media"],
     "modules-right": ["network", "tray", "pulseaudio", "clock"],
     "margin-left": 0,
@@ -68,8 +68,8 @@
         "tooltip": false,
         "format": " {}%",
         "interval":1,
-        "on-scroll-up": "light -A 5",
-        "on-scroll-down": "light -U 5"
+        "on-scroll-up": "brightnessctl s 5%+",
+        "on-scroll-down": "brightnessctl set 5%-"
     },
 
     "battery": {
