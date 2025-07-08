@@ -22,6 +22,7 @@ include ~/.cache/wal/colors-sway
 font pango:JetBrainsMono Nerd Font 10
 
 bar {
+    swaybar_command waybar
     position top
 
     status_command while true; do echo "$(cat /sys/class/power_supply/BAT0/capacity)% $(date '+%a %d/%m %T')"; sleep 1; done
