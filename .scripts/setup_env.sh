@@ -49,9 +49,10 @@ install_deps() {
         # Shell
         neovim starship oh-my-posh-bin tmux
         yazi zsh fastfetch fzf zinit fd git zoxide
-        )
+    )
 
-        paru -S --needed --noconfirm "${packages[@]}"
+    paru -S --needed --noconfirm "${packages[@]}"
+    cargo install safe-rm
 }
 
 setup() {
