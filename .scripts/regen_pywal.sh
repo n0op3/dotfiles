@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ ! -f ~/.cache/pywal_on ]; then
+if [ ! -f ~/.pywal_on ]; then
     exit 1
 fi
 
