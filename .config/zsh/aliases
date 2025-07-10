@@ -1,5 +1,5 @@
 alias find='fd'
-alias carr='cargo r'
+alias cr='cargo r'
 alias cp='rsync -aP'
 alias mv='rsync --remove-source-files -aP'
 alias v='nvim'
