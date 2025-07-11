@@ -1,3 +1,7 @@
 .config/rofi/background.png
 .config/kitty/current-theme.conf
 .config/tmux/plugins
+.config/clipse/clipse.log
+.config/clipse/clipboard_history.json
+.config/clipse/custom_theme.json
+.config/clipse/custom_theme.json
