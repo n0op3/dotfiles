@@ -58,7 +58,7 @@ install_deps() {
         # Shell
         neovim starship oh-my-posh-bin tmux
         yazi zsh fastfetch fzf zinit fd git zoxide
-        tokei rsync lsd
+        tokei rsync lsd bat
     )
 
     paru -S --needed --noconfirm "${packages[@]}"
