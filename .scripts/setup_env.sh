@@ -62,7 +62,7 @@ install_deps() {
     )
 
     paru -S --needed --noconfirm "${packages[@]}"
-    cargo install safe-rm
+    cargo install safe-rm btop
 }
 
 setup() {
