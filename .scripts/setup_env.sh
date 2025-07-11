@@ -34,6 +34,7 @@ install_deps() {
     packages=(
         # Utilities
         man-db tldr ufw stow git-credential-manager-bin
+        luarocks
 
         # Desktop environment
         hyprland hyprlock hypridle uwsm
