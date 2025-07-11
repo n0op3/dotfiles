@@ -11,3 +11,4 @@ else
     touch $HOME/.cache/hyprland-powersave
     notify-send "Powersave activated"
 fi
+~/.scripts/toggle_wallpaper.sh
