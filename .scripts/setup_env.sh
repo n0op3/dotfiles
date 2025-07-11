@@ -33,7 +33,7 @@ install_toolchains() {
 install_deps() {
     packages=(
         # Utilities
-        timeshift man-db tldr ufw stow
+        man-db tldr ufw stow
 
         # Desktop environment
         hyprland hyprlock hypridle uwsm
@@ -41,7 +41,14 @@ install_deps() {
         fcitx5 fcitx5-configtool fcitx5-mozc
         kitty mpv playerctl iwgtk clipse
         zen-browser-bin rofi-power-menu
-        rofi-emoji syshud
+        rofi-emoji syshud ttf-jetbrains-mono
+        ttf-jetbrains-mono-nerd unipicker
+        grimblast-git libnotify mako
+
+        # Audio and video
+        pwvuctronol pipewire wireplumber
+        pipewire-jack pipewire-pulse
+        pipewire-audio xdg-desktop-portal-hyprland
 
         # Theming
         python-pywal16 swww walcord
@@ -49,6 +56,7 @@ install_deps() {
         # Shell
         neovim starship oh-my-posh-bin tmux
         yazi zsh fastfetch fzf zinit fd git zoxide
+        tokei
     )
 
     paru -S --needed --noconfirm "${packages[@]}"
@@ -60,6 +68,8 @@ setup() {
     sudo usermod -s /bin/zsh $USER
     sudo ufw enable
     stow .
+    cd ~
+    ln -sf .wine wine
 }
 
 install_toolchains
