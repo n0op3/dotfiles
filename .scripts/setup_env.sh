@@ -33,13 +33,13 @@ install_toolchains() {
 install_deps() {
     packages=(
         # Utilities
-        man-db tldr ufw stow
+        man-db tldr ufw stow git-credential-manager-bin
 
         # Desktop environment
         hyprland hyprlock hypridle uwsm
         waybar brightnessctl rofi-wayland
         fcitx5 fcitx5-configtool fcitx5-mozc
-        kitty mpv playerctl iwgtk clipse
+        kitty mpv playerctl iwgtk clipse-bin
         zen-browser-bin rofi-power-menu
         rofi-emoji syshud ttf-jetbrains-mono
         ttf-jetbrains-mono-nerd unipicker
@@ -47,7 +47,7 @@ install_deps() {
         noto-fonts-cjk noto-fonts-emoji
 
         # Audio and video
-        pwvuctronol pipewire wireplumber
+        pwvucontrol pipewire wireplumber
         pipewire-jack pipewire-pulse
         pipewire-audio xdg-desktop-portal-hyprland
 
@@ -57,7 +57,7 @@ install_deps() {
         # Shell
         neovim starship oh-my-posh-bin tmux
         yazi zsh fastfetch fzf zinit fd git zoxide
-        tokei rsync
+        tokei rsync lsd
     )
 
     paru -S --needed --noconfirm "${packages[@]}"
