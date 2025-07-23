@@ -44,7 +44,7 @@ install_deps() {
         zen-browser-bin rofi-power-menu
         rofi-emoji syshud ttf-jetbrains-mono
         ttf-jetbrains-mono-nerd unipicker
-        grimblast-git libnotify mako
+        grimblast-git libnotify hyprnotify
         noto-fonts-cjk noto-fonts-emoji
 
         # Audio and video
