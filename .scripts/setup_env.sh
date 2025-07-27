@@ -45,7 +45,7 @@ install_deps() {
         rofi-emoji syshud ttf-jetbrains-mono
         ttf-jetbrains-mono-nerd unipicker
         grimblast-git libnotify hyprnotify
-        noto-fonts-cjk noto-fonts-emoji
+        noto-fonts-cjk noto-fonts-emoji pyprland
 
         # Audio and video
         pwvucontrol pipewire wireplumber
@@ -58,7 +58,7 @@ install_deps() {
         # Shell
         neovim starship oh-my-posh-bin tmux
         yazi zsh fastfetch fzf zinit fd git zoxide
-        tokei rsync lsd bat
+        tokei rsync lsd bat sd
     )
 
     paru -S --needed --noconfirm "${packages[@]}"
