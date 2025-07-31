@@ -1,15 +1,8 @@
-# Elements
-indicator
-clock
-
 # Visuals
-indicator-image=~/.cache/current_wallpaper.png
-image=~/.cache/current_wallpaper.png
-effect-blur=8x4
+# image=~/.cache/current_wallpaper.png
 
 # Behavior
 ignore-empty-password
-indicator-radius=512
 
 # Colors
 color=1e1e2e
