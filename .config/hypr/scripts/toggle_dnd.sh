@@ -5,7 +5,7 @@ if [ $(pidof hyprnotify) ]; then
     sleep 1
     killall hyprnotify
 else
-    hyprnotify &
+    hyprnotify -s &
     sleep 0.1
     notify-send "DND off"
 fi
