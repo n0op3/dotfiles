@@ -65,7 +65,7 @@
         "maxNotifs": 5
     },
     "notifs": {
-        "actionOnClick": false,
+        "actionOnClick": true,
         "clearThreshold": 0.3,
         "defaultExpireTimeout": 5000,
         "expandThreshold": 20,
