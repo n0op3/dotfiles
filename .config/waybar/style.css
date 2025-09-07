@@ -98,8 +98,8 @@ button.active label {
 #custom-distro {
 	padding: 0 10px 0 5px;
 	font-size: 23px;
-	background-color: @accent;
-	color: @main-bg;
+	/* background-color: @accent; */
+	color: @main-fg;
 }
 
 /* idle inhibitor and time */
