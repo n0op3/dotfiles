@@ -46,6 +46,7 @@ install_deps() {
         ttf-jetbrains-mono-nerd unipicker
         grimblast-git libnotify hyprnotify
         noto-fonts-cjk noto-fonts-emoji pyprland
+        caelestia-shell
 
         # Audio and video
         pwvucontrol pipewire wireplumber

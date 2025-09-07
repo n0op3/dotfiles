@@ -2,3 +2,4 @@ include=~/.cache/wal/colors-mako
 
 default-timeout=5000
 border-radius=4
+font=monospace 12

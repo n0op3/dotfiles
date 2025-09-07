@@ -1,5 +1,5 @@
 #!/bin/bash
-if ! wal -i ~/.cache/current_wallpaper.png --saturate 0.7 --contrast 8; then
+if ! wal -i ~/.cache/current_wallpaper.png --saturate 0.2 --contrast 2; then
     notify-send "Failed to generate color scheme"
     exit 1
 fi
