@@ -20,3 +20,6 @@ alias cr='cargo run'
 alias cb='cargo build'
 alias cc='cargo check'
 alias ccc='cargo clippy'
+
+# Git
+alias gc='git checkout'
