@@ -1,3 +1,4 @@
+alias update='backup.sh && paru -Syu --noconfirm'
 alias find='fd'
 alias cp='rsync -aP'
 alias mv='rsync --remove-source-files -aP'

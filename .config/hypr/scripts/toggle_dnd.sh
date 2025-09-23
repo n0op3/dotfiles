@@ -1,11 +1,11 @@
 #!/bin/bash
 
-if [ $(pidof hyprnotify) ]; then
+if [ $(pidof mako) ]; then
     notify-send "DND on"
     sleep 1
-    killall hyprnotify
+    killall mako
 else
-    hyprnotify -s &
+    mako &
     sleep 0.1
     notify-send "DND off"
 fi

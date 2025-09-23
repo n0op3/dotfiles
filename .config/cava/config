@@ -3,7 +3,7 @@
 
 [general]
 # Number of bars (20-200) - fewer bars = better performance
-bars = 64
+# bars = 64
 # Framerate (1-144) - higher = smoother but more CPU intensive
 framerate = 60
 
@@ -45,7 +45,7 @@ waves = 0
 
 # Gravity (0-200) - controls how fast bars fall
 # 100 = normal gravity, 150 = faster fall, 50 = slower fall
-gravity = 120
+gravity = 140
 
 [eq]
 # Equalizer settings for frequency response
