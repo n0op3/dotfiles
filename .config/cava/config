@@ -35,7 +35,7 @@ gradient_color_8 = '#c9b5ed'
 [smoothing]
 # Noise reduction (0-100) - higher = smoother but less responsive
 # 77 is default, 85 provides good balance for smooth visualization
-noise_reduction = 85
+noise_reduction = 80
 
 # Monstercat smoothing (0 or 1) - adds smoothing between adjacent bars
 monstercat = 1

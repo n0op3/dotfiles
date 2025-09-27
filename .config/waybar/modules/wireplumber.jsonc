@@ -33,6 +33,7 @@
 		"on-click": "~/.config/waybar/scripts/wireplumber.sh out",
 		// "on-click-middle":
 		// "on-click-right":
+		"on-click-right": "pwvucontrol",
 		"on-scroll-up": "~/.config/waybar/scripts/wireplumber.sh out raise",
 		"on-scroll-down": "~/.config/waybar/scripts/wireplumber.sh out lower",
 		// "tooltip":
