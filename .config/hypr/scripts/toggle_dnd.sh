@@ -1,11 +1,10 @@
 #!/bin/bash
 
-if [ $(pidof mako) ]; then
+if [ "$(makoctl mode)" == "default" ]; then
     notify-send "DND on"
-    sleep 1
-    killall mako
+    sleep 0.5
+    makoctl mode -a do-not-disturb
 else
-    mako &
-    sleep 0.1
+    makoctl mode -r do-not-disturb
     notify-send "DND off"
 fi

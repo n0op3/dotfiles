@@ -3,3 +3,6 @@ include=~/.cache/wal/colors-mako
 default-timeout=5000
 border-radius=0
 font=JetBrainsMono 10
+
+[mode=do-not-disturb]
+invisible=true
