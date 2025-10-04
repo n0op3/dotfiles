@@ -12,8 +12,8 @@ configuration {
 }
 
 window {
-    border-radius: 0px;
-    width: 40%;
+    border-radius: 8px;
+    width: 30%;
     border: 2px solid;
     border-color: @selected-active-background;
 }
@@ -23,7 +23,7 @@ listview {
 }
 
 element-icon {
-	size: 24 px;
+	size: 32 px;
 	background-color: inherit;
 	padding: 0 6 0 0;
 	alignment: vertical;
