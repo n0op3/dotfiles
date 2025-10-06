@@ -4,6 +4,9 @@ if ! wal -i ~/.cache/current_wallpaper.png --saturate 0.4 --contrast 7; then
     exit 1
 fi
 
-walcord # Vesktop theme update
-pywalfox update # Refresh firefox theme
-killall syshud && syshud -o v -p right # Reload the OSD
+walcord & disown
+
+pywalfox update & disown
+
+killall syshud
+syshud -o v -p right & disown

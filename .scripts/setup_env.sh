@@ -34,7 +34,7 @@ install_deps() {
     packages=(
         # Utilities
         man-db tldr ufw stow git-credential-manager-bin
-        luarocks russ hyprpicker
+        luarocks russ hyprpicker hyprmon-bin reflector
 
         # Desktop environment
         hyprland hyprlock hypridle uwsm
@@ -46,7 +46,7 @@ install_deps() {
         ttf-jetbrains-mono-nerd unipicker
         grimblast-git libnotify hyprnotify
         noto-fonts-cjk noto-fonts-emoji pyprland
-        caelestia-shell
+        eog opentabletdriver
 
         # Audio and video
         pwvucontrol pipewire wireplumber
