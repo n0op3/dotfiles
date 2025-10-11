@@ -15,6 +15,7 @@ alias glo='git log --oneline --graph --decorate'
 alias cm='git commit -am'
 alias rm='safe-rm'
 alias cloc='tokei'
+alias cava='~/.scripts/cava_pywal.sh'
 
 # Cargo
 alias cr='cargo run'

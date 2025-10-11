@@ -11,9 +11,9 @@ style = stereo
 
 [color]
 gradient = 1
-gradient_count = 8
-gradient_color_1 = '#c8e3ff'
-gradient_color_2 = '#d3dfff'
+gradient_count = 16
+gradient_color_1 = '%%%%%%%'
+gradient_color_2 = '+++++++'
 
 [smoothing]
 # Noise reduction (0-100) - higher = smoother but less responsive
@@ -28,6 +28,8 @@ monstercat = 1
 gravity = 140
 
 [eq]
+# Equalizer settings for frequency response
+# Lower frequencies tend to be louder, so reduce them slightly
 1 = 0.8
 2 = 0.9
 3 = 1.0
