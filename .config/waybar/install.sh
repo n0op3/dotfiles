@@ -1,47 +1,79 @@
 #!/usr/bin/env bash
+#
+# Install mechabar dependencies using pacman
+#
+# Author: Jesse Mirabel <github.com/sejjy>
+# Created: August 22, 2025
+# License: MIT
 
-red='\033[1;31m'
-green='\033[1;32m'
-blue='\033[1;34m'
-reset='\033[0m'
+RED='\033[1;31m'
+GRN='\033[1;32m'
+BLU='\033[1;34m'
+RST='\033[0m'
 
-install() {
-	if pacman -Qi "$1" &>/dev/null; then
-		echo -e "[${green}/${reset}] $1"
-		return 0
-	else
-		echo -e "[ ] $1..."
-		if sudo pacman -S --noconfirm "$1"; then
-			echo -e "[${green}+${reset}] $1"
-			return 0
+DEPS=(
+	bluez
+	bluez-utils # bluetoothctl
+	brightnessctl
+	fzf
+	networkmanager # nmcli
+	pipewire-pulse
+	ttf-0xproto-nerd
+)
+
+install-deps() {
+	local package
+	local errors=0
+
+	echo -e "${BLU}Installing dependencies...${RST}" >&2
+
+	for package in "${DEPS[@]}"; do
+		if pacman -Qi "$package" &>/dev/null; then
+			echo -e "[${GRN}/${RST}] $package" >&2
 		else
-			echo -e "[${red}x${reset}] $1" >&2
-			return 1
+			echo "[ ] $package..." >&2
+
+			if sudo pacman -S --noconfirm "$package"; then
+				echo -e "[${GRN}+${RST}] $package" >&2
+			else
+				echo -e "[${RED}-${RST}] $package" >&2
+				((errors++))
+			fi
 		fi
+	done
+
+	echo "$errors"
+}
+
+setup-scripts() {
+	echo -e "\n${BLU}Making scripts executable...${RST}"
+	chmod +x ~/.config/waybar/scripts/*.sh
+}
+
+restart-waybar() {
+	echo -e "\n${BLU}Restarting Waybar...${RST}"
+
+	pkill waybar 2>/dev/null || true
+	nohup waybar >/dev/null 2>&1 &
+}
+
+display-result() {
+	local errors=$1
+
+	if ((errors > 0)); then
+		echo -e "\nInstallation completed with ${RED}$errors error(s)${RST}"
+	else
+		echo -e "\n${GRN}Installation complete!${RST}"
 	fi
 }
 
-echo -e "\n${blue}Installing dependencies...${reset}"
-dependencies=(
-	bluez bluez-utils brightnessctl fzf pipewire ttf-0xproto-nerd wireplumber
-)
+main() {
+	local errors
+	errors=$(install-deps)
 
-n=0
-for package in "${dependencies[@]}"; do
-	if ! install "$package"; then
-		((n++))
-	fi
-done
+	setup-scripts
+	restart-waybar
+	display-result "$errors"
+}
 
-echo -e "\n${blue}Setting up scripts...${reset}"
-chmod +x scripts/*.sh
-
-echo -e "\n${blue}Restarting Waybar...${reset}"
-pkill waybar 2>/dev/null || true
-nohup waybar >/dev/null 2>&1 &
-
-if ((n > 0)); then
-	echo -e "\nInstallation completed with ${red}${n} error/s${reset}"
-else
-	echo -e "\n${green}Installation complete!${reset}"
-fi
+main "$@"
