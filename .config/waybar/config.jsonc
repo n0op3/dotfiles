@@ -49,6 +49,7 @@
     ],
     "modules-right": [
         "mpris",
+        "tray",
         "custom/left_div#6",
         "group/pulseaudio",
         "custom/left_div#7",
@@ -318,6 +319,7 @@
         "min-length": 7,
         "max-length": 7,
         "on-click": "~/.config/waybar/scripts/volume.sh output mute",
+        "on-click-right": "pwvucontrol",
         "on-scroll-up": "~/.config/waybar/scripts/volume.sh output raise",
         "on-scroll-down": "~/.config/waybar/scripts/volume.sh output lower",
         "tooltip-format": "Output Device: {desc}"

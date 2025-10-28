@@ -46,7 +46,7 @@ install_deps() {
         ttf-jetbrains-mono-nerd unipicker
         grimblast-git libnotify hyprnotify
         noto-fonts-cjk noto-fonts-emoji pyprland
-        eog opentabletdriver
+        eog opentabletdriver hyprpolkitagent
 
         # Audio and video
         pwvucontrol pipewire wireplumber

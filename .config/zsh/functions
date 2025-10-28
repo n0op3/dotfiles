@@ -3,5 +3,5 @@
 source ~/.config/zsh/common
 
 startup() {
-    fastfetch
+    # fastfetch
 }
