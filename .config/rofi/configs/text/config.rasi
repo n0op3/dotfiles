@@ -7,7 +7,7 @@ textbox-prompt-colon {
 configuration {
 	show-icons: true;
 	location: 0;
-	font: "JetBrainsMono Nerd Font 12";	
+	font: "JetBrainsMono Nerd Font SemiBold 12";
 	display-drun: "打ち上げ:";
 }
 
