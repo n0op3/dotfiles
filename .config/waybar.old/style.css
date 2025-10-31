@@ -1,83 +1,89 @@
-@import '../../.cache/wal/colors-waybar.css';
+@import "styles/modules-left.css";
+@import "styles/modules-center.css";
+@import "styles/modules-right.css";
+@import "theme.css";
+@import "../../.cache/wal/colors-waybar.css";
 
 * {
-    border-radius: 4px;
-    font-family: "JetbrainsMono Nerd Font";
-    font-size: 16px;
-    min-height: 10px;
-    margin: 0px 0px 1px 4px;
-    padding-right: 4px;
-    padding-left: 4px;
+	font-family: "0xProto Nerd Font";
+	font-weight: bold;
+	font-size: 16px;
+	color: @foreground;
 }
+
+/* main outline */
 
 window#waybar {
-    background: @background;
-    border-radius: 0px;
-    border-bottom: 2px solid @foreground;
+	background-color: @background;
+    border-bottom: 2px @foreground solid;
 }
 
-#cpu {
-    color: @color1;
+/* main background */
+
+window#waybar > box {
+	margin: 4px;
+	background-color: @background;
 }
 
-#memory {
-    color: @color2;
+/* hoverables */
+
+#custom-theme_switcher:hover,
+#idle_inhibitor:hover,
+#clock.date:hover,
+#network:hover,
+#bluetooth:hover,
+#custom-system_update:hover,
+#mpris:hover,
+#pulseaudio:hover,
+#wireplumber:hover {
+	color: @cursor;
 }
 
-#custom-media {
-    color: @color3;
+/* states */
+
+.deactivated,
+.paused,
+#pulseaudio.output.muted,
+#pulseaudio.input.source-muted,
+#wireplumber.muted {
+	color: @cursor;
+}
+.warning { color: @warning; }
+.critical { color: @critical; }
+.charging { color: @charging; }
+
+/* dividers */
+
+#custom-left_div,
+#custom-left_inv,
+#custom-right_div,
+#custom-right_inv {
+	font-size: 23.1px;
 }
 
-#clock {
-    color: @color4;
+/* buttons */
+
+button {
+	border-radius: 16px;
+	padding: 0 10px;
+}
+button:hover {
+	background-color: @hover-bg;
+	color: @hover-fg;
 }
 
-#cpu, #memory, #clock {
-    padding-left: 8px;
-    padding-right: 8px;
-}
+/* tooltips */
 
-#battery {
-    color: @color9;
+tooltip {
+	border: 2px solid @main-br;
+	border-radius: 10px;
+	background-color: @main-bg;
 }
-
-#cpu, #memory, #clock, #battery, #pulseaudio, #workspaces {
-    background: mix(shade(@background, 1.5), rgb(77, 77, 77), 0.5);
-    margin-bottom: 4px;
+tooltip label {
+	margin: 2px 4px;
+	font-weight: normal;
 }
-
-#battery.critical:not(.charging) {
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-@keyframes blink {
-    to {
-        background-color: #F28FAD;
-        color: #15141B;
-    }
-}
-
-#pulseaudio {
-    color: @color5;
-}
-
-#workspaces {
-    margin-left: 2px;
-    padding-left: 8px;
-    padding-right: 8px;
-    margin-right: 32px;
-}
-
-#workspaces button {
-    color: @color6;
-    padding: 1px;
-}
-
-#workspaces button.active {
-    background: @color4;
-    color: @background;
+tooltip decoration {
+	border: none;
+	background-color: transparent;
 }
