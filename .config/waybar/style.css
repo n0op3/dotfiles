@@ -1,6 +1,14 @@
 @import '../../.cache/wal/colors-waybar.css';
 
+* {
+    color: @foreground;
+}
+
 window#waybar {
     background-color: @background;
     border-bottom: 2px @foreground solid;
+}
+
+#workspaces:active {
+    color: @color1;
 }
