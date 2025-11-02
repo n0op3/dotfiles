@@ -9,6 +9,30 @@ window#waybar {
     border-bottom: 2px @foreground solid;
 }
 
-#workspaces:active {
+#workspaces .active label {
+    color: @color10;
+}
+
+#clock {
     color: @color1;
+}
+
+#cpu {
+    color: @color5;
+}
+
+#memory {
+    color: @color8;
+}
+
+#network {
+    color: @color13;
+}
+
+#pulseaudio {
+    color: @color12;
+}
+
+#battery {
+    color: @color15;
 }
