@@ -44,7 +44,7 @@ install_deps() {
         zen-browser-bin rofi-power-menu
         rofi-emoji syshud ttf-jetbrains-mono
         ttf-jetbrains-mono-nerd unipicker
-        grimblast-git libnotify hyprnotify
+        hyprshot libnotify hyprnotify
         noto-fonts-cjk noto-fonts-emoji pyprland
         eog opentabletdriver hyprpolkitagent
 
