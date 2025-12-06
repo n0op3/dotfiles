@@ -2,11 +2,15 @@
 
 * {
     color: @foreground;
+    font-size: 16;
+    font-family: JetBrainsMono;
+    margin-right: 2px;
 }
 
 window#waybar {
     background-color: @background;
-    border-bottom: 2px @foreground solid;
+    border: 2px @color2 solid;
+    border-radius: 8px;
 }
 
 #workspaces .active label {

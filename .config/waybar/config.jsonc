@@ -1,5 +1,7 @@
 {
     "layer": "top",
+    "margin": 4,
+    "height": 40,
     "spacing": 16,
     "modules-left": [
         "hyprland/workspaces"
@@ -53,7 +55,7 @@
         }
     },
     "clock": {
-        "format": "「{:%H:%M %d-%m}」",
+        "format": " {:%H:%M %d-%m}",
         "interval": 1
     },
     "network": {
