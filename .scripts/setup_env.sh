@@ -54,7 +54,7 @@ install_deps() {
         pipewire-audio xdg-desktop-portal-hyprland
 
         # Theming
-        python-pywal16 swww walcord
+        python-pywal16 swww walcord python-pywalfox
 
         # Shell
         neovim starship oh-my-posh-bin tmux
