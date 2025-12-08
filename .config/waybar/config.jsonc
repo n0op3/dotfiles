@@ -80,6 +80,7 @@
         "format": "{icon}  {percentage}%",
         "format-icons": [
             " ",
+            " ",
             "  "
         ],
         "interval": 5
