@@ -7,9 +7,8 @@ font=JetBrainsMono 10
 [mode=do-not-disturb]
 invisible=true
 
-[urgency=critical]
-border-color=#cc9900
-default-timeout=10000
+[urgency=low]
+border-color=#00e600
 
 [urgency=critical]
 border-color=#e60000
