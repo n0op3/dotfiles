@@ -12,4 +12,4 @@ border-color=#00e600
 
 [urgency=critical]
 border-color=#e60000
-default-timeout=0
+default-timeout=10000

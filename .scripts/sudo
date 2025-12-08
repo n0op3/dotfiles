@@ -1,0 +1,3 @@
+#!/bin/bash
+notify-send --urgency high "sudo password requested" 
+exec /usr/bin/sudo "$@"
