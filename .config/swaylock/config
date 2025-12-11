@@ -1,8 +1,14 @@
 # Visuals
+daemonize
 image=~/.cache/current_wallpaper.png
+effect-blur=8x8
+font-size=64
+indicator-radius=150
 
 # Behavior
 ignore-empty-password
+clock
+indicator
 
 # Colors
 color=1e1e2e
@@ -14,7 +20,7 @@ inside-clear-color=00000000
 inside-caps-lock-color=00000000
 inside-ver-color=00000000
 inside-wrong-color=00000000
-key-hl-color=00000000
+key-hl-color=b792f3
 layout-bg-color=00000000
 layout-border-color=00000000
 layout-text-color=cdd6f4
@@ -29,7 +35,7 @@ ring-caps-lock-color=fab387
 ring-ver-color=89b4fa
 ring-wrong-color=eba0ac
 separator-color=00000000
-text-color=000000
+text-color=ffffff
 text-clear-color=66e6b36
 text-caps-lock-color=fab387
 text-ver-color=89b4fa
