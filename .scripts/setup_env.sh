@@ -47,6 +47,7 @@ install_deps() {
         hyprshot libnotify hyprnotify
         noto-fonts-cjk noto-fonts-emoji pyprland
         eog opentabletdriver hyprpolkitagent
+        swaylock-effects
 
         # Audio and video
         pwvucontrol pipewire wireplumber
