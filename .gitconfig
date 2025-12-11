@@ -3,6 +3,7 @@
 	email = n0op3@proton.me
 [credential]
 	helper = store
+    credentialStore = gpg
 [init]
 	defaultBranch = main
 [pull]
