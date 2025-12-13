@@ -9,7 +9,7 @@
 
 window#waybar {
     background-color: @background;
-    border: 2px @color2 solid;
+    border: 1px @color2 solid;
     border-radius: 8px;
 }
 
