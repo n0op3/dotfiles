@@ -47,7 +47,7 @@ install_deps() {
         hyprshot libnotify hyprnotify
         noto-fonts-cjk noto-fonts-emoji pyprland
         eog opentabletdriver hyprpolkitagent
-        swaylock-effects
+        swaylock-effects gestures
 
         # Audio and video
         pwvucontrol pipewire wireplumber
@@ -68,9 +68,11 @@ install_deps() {
 }
 
 setup() {
-    sudo usermod -aG games,power,video,audio $USER
+    sudo usermod -aG games,power,video,audio,input $USER
     sudo usermod -s /bin/zsh $USER
     sudo ufw enable
+
+    libinput-gestures-setup desktop autostart
     stow .
     cd ~
     ln -sf .wine wine

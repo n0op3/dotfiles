@@ -22,7 +22,7 @@
             "warning": 20,
             "critical": 10
         },
-        "format": "{icon}",
+        "format": "{capacity}% {icon}",
         "format-time": "{H} hr {M} min",
         "format-icons": [
             "󰂎",
