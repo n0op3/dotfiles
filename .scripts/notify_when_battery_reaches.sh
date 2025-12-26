@@ -7,9 +7,8 @@ while true; do
 
     if [ $bat_lvl -le $1 ] && [ "$bat_status" == "Discharging" ]; then
         notify-send --urgency=CRITICAL "Battery Low" "Level: ${bat_lvl}%"
-        sleep 1200
-    else
-        sleep 120
     fi
+
+    sleep 60
 
 done
