@@ -8,9 +8,9 @@
 }
 
 window#waybar {
-    background-color: @background;
-    border: 1px @color2 solid;
-    border-radius: 0px;
+    background-color: mix(@background, transparent, 0.4);
+    border: 2px @color2 solid;
+    border-radius: 8px;
 }
 
 #workspaces .active label {
