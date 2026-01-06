@@ -47,7 +47,7 @@ install_deps() {
         hyprshot libnotify hyprnotify
         noto-fonts-cjk noto-fonts-emoji pyprland
         eog opentabletdriver hyprpolkitagent
-        swaylock-effects gestures
+        swaylock-effects gestures emptty
 
         # Audio and video
         pwvucontrol pipewire wireplumber
@@ -76,6 +76,8 @@ setup() {
     stow .
     cd ~
     ln -sf .wine wine
+
+    sudo systemctl enable emptty
 }
 
 install_toolchains
