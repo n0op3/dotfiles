@@ -3,7 +3,7 @@ daemonize
 image=~/.cache/current_wallpaper.png
 effect-blur=8x8
 font-size=64
-indicator-radius=150
+indicator-radius=180
 
 # Behavior
 ignore-empty-password
