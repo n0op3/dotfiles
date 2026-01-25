@@ -1,88 +1,75 @@
 {
-    "layer": "top",
-    "margin": 4,
-    "height": 40,
+    "margin-top": 8,
+    "margin-bottom": 8,
+    "height": 34,
     "spacing": 16,
     "modules-left": [
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
         "cpu",
-        "clock",
         "memory"
     ],
-    "modules-right": [
+    "modules-center": [
+        "clock",
+        "hyprland/workspaces",
         "network",
-        "tray",
         "pulseaudio",
         "battery"
+    ],
+    "modules-right": [
+        "tray"
     ],
     "battery": {
         "states": {
             "warning": 20,
             "critical": 10
         },
-        "format": "{capacity}% {icon}",
+        "format": "{icon}",
         "format-time": "{H} hr {M} min",
         "format-icons": [
-            "󰂎",
-            "󰁻",
-            "󰁼",
-            "󰁽",
-            "󰁾",
-            "󰁿",
-            "󰂀",
-            "󰂁",
-            "󰂂",
-            "󰁹"
+            " ",
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
         ],
-        "format-charging": "󰉁 {capacity}%"
+        "format-charging": "󰉁{icon}"
     },
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "{icon} {volume}%",
+        "format": "{icon}",
         "format-icons": {
             "default": [
                 "󰕿",
                 "󰖀",
                 "󰕾"
             ],
-            "default-muted": "󰝟",
-            "headphone": "󰋋",
-            "headphone-muted": "󰟎",
-            "headset": "󰋎",
-            "headset-muted": "󰋐"
+            "default-muted": "󰝟 ",
+            "headphone": "󰋋 ",
+            "headphone-muted": "󰟎 ",
+            "headset": "󰋎 ",
+            "headset-muted": "󰋐 "
         }
     },
     "clock": {
-        "format": " {:%H:%M %d-%m}",
-        "interval": 1
+        "format": "{:%H:%M}",
+        "interval": 5
     },
     "network": {
-        "format-wifi": "󰖩 {icon}({signalStrength}%)  {essid}",
+        "format-wifi": "{icon}",
         "format-disabled": "no connection",
         "format-icons": [
-            "󰢿 ",
-            "󰢼 ",
-            "󰢽 ",
-            "󰢾 "
+            "󰤯 ",
+            "󰤟 ",
+            "󰤢 ",
+            "󰤥 ",
+            "󰤨 "
         ]
     },
     "cpu": {
-        "format": "{icon}  {usage}%",
-        "format-icons": [
-            " ",
-            "  "
-        ],
+        "format": "CPU {usage}%",
         "interval": 5
     },
     "memory": {
-        "format": "{icon}  {percentage}%",
-        "format-icons": [
-            " ",
-            " ",
-            "  "
-        ],
+        "format": "RAM {percentage}%",
         "interval": 5
     },
     "hyprland/workspaces": {
@@ -101,7 +88,7 @@
             "active": "󰻃 "
         },
         "persistent-workspaces": {
-            "*": 4
+            "*": 5
         }
     }
 }
