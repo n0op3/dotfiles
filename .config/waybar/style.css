@@ -7,7 +7,8 @@
     margin: 0;
     padding: 0 4px;
     font-size: 18;
-    font-weight: 600;
+    font-family: "Rubik";
+    font-weight: 500;
 }
 
 .modules-left {
@@ -35,8 +36,15 @@ window#waybar {
     background-color: transparent;
 }
 
-#workspaces .active label {
-    color: @color10;
+#workspaces button {
+    margin: 4px 0px 4px 0px;
+    border-radius: 16px;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+    background: linear-gradient(135deg, @color4, @color6, @color8);
+    color: @color0;
 }
 
 #clock {
