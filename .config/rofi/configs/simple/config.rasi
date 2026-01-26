@@ -1,0 +1,37 @@
+@theme "~/.cache/wal/colors-rofi-dark.rasi"
+
+textbox-prompt-colon {
+    str: "";
+}
+
+configuration {
+	show-icons: true;
+	location: 0;
+	font: "JetBrainsMono Nerd Font 14";	
+	display-drun: "Launch";
+}
+
+window { 
+	width: 25%;
+	orientation: vertical;
+    border: 2px solid;
+    border-radius: 8px;
+    border-color: @foreground;
+}
+
+element {
+    border-radius: 8px;
+    text-color: @normal-background;
+}
+
+element-icon {
+    size: 32;
+}
+
+listview {
+    lines: 12;
+}
+
+element selected.normal {
+    text-color: @background;
+}
