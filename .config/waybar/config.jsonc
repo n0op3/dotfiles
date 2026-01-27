@@ -12,7 +12,8 @@
         "hyprland/workspaces",
         "network",
         "pulseaudio",
-        "battery"
+        "battery",
+        "custom/date"
     ],
     "modules-right": [
         "tray"
@@ -91,5 +92,9 @@
         "persistent-workspaces": {
             "*": 5
         }
+    },
+    "custom/date": {
+        "format": "{text}",
+        "exec": "date +\"%d/%m\""
     }
 }
