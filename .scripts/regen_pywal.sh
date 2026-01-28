@@ -11,4 +11,4 @@ killall syshud
 syshud -o v -p right & disown
 
 hyprctl clients | grep -q 'waybar' && pkill waybar
-waybar & disown
+pkill .waybar-wrapped && waybar & disown
