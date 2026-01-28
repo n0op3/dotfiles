@@ -11,3 +11,5 @@ cp "$1" ~/.cache/current_wallpaper.jpg
 rm ~/.config/rofi/background.png
 magick ~/.cache/current_wallpaper.png -resize 1000x400 ~/.config/rofi/background.png # to speed up rofi image loading times if the wallpaper is used in the theme
 # caelestia wallpaper -f $1
+
+regen_pywal.sh
