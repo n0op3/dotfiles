@@ -1,5 +1,3 @@
-#!/bin/sh
-
 install_toolchains() {
     if ! type rustup > /dev/null 2>&1; then
         echo "Installing Rust..."

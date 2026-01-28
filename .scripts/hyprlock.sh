@@ -1,5 +1,3 @@
-#!/bin/bash
-
 aesthetic () {
   background=$(find $wallpapers_path/Aesthetic -type f | shuf -n 1)
   cp $background /tmp/hyprlock_hdmi

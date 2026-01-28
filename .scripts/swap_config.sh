@@ -1,6 +1,3 @@
-
-#!/bin/bash
-
 help() {
   echo "Usage: $0 <config_name>"
   echo "Each config should be a separate directory inside the configs directory."

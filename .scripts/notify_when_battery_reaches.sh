@@ -1,5 +1,3 @@
-#!/bin/bash
-
 while true; do
 
     bat_lvl=$(cat /sys/class/power_supply/BAT*/capacity)

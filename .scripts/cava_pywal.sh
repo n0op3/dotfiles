@@ -1,5 +1,3 @@
-#!/bin/bash
-
 color1=$( awk 'match($0, /color0=\47(.*)\47/,a) { print a[1] }' ~/.cache/wal/colors.sh )
 color2=$( awk 'match($0, /color1=\47(.*)\47/,a) { print a[1] }' ~/.cache/wal/colors.sh )
 

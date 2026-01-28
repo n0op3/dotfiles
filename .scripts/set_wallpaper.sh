@@ -1,5 +1,3 @@
-#!/bin/sh
-
 filter=""
 if identify ~/.cache/current_wallpaper | grep GIF; then
     filter="--filter Nearest"

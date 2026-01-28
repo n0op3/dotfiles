@@ -1,4 +1,3 @@
-#!/bin/bash
 if [ -f "$HOME/.pywal_on" ]; then
     rm ~/.pywal_on
     rm -rf ~/.cache/wal/colors-hyprland.conf
