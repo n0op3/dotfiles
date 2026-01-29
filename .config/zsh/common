@@ -1,9 +1,11 @@
 #!/bin/zsh
 apply_pywal_colors() {
     if [ -f ~/.pywal_on ]; then
-        (cat ~/.cache/wal/sequences &)
-        source ~/.cache/wal/colors-tty.sh
-        export PYWAL=1
+        if [ -d "$HOME/.cache/wal" ]; then
+            (cat ~/.cache/wal/sequences &)
+            source ~/.cache/wal/colors-tty.sh
+            export PYWAL=1
+        fi
     else
         if [ "$PYWAL" -eq 1 ]; then
             reset

@@ -3,12 +3,6 @@ source ~/.config/zsh/functions
 #eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)" # Oh My Posh
 eval "$(starship init zsh)"                                                # Starship
 
-# Apply pywal colors
-if [ -d "$HOME/.cache/wal" ]; then
-    (cat ~/.cache/wal/sequences &)
-    (source ~/.cache/wal/colors-tty.sh &)
-fi
-
 # FZF
 source <(fzf --zsh)
 
