@@ -5,7 +5,8 @@ eval "$(starship init zsh)"                                                # Sta
 
 # Apply pywal colors
 if [ -d "$HOME/.cache/wal" ]; then
-    apply_pywal_colors;
+    (cat ~/.cache/wal/sequences &)
+    (source ~/.cache/wal/colors-tty.sh &)
 fi
 
 # FZF
@@ -76,11 +77,10 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 # Snippets
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
 
 # Load completions
-autoload -U compinit && compinit
+(autoload -U compinit && compinit & )
 
 # Completion styling
 zstyle ':completion:*' menu no
