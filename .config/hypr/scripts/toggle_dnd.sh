@@ -1,5 +1,3 @@
-#!/bin/bash
-
 if [ "$(makoctl mode)" == "default" ]; then
     notify-send "DND on"
     sleep 0.5

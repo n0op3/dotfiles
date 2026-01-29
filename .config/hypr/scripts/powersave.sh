@@ -1,4 +1,3 @@
-#!/bin/bash
 if [ -f $HOME/.cache/hyprland-powersave ]; then
     hyprctl reload
     rm $HOME/.cache/hyprland-powersave
