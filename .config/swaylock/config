@@ -8,7 +8,6 @@ indicator-radius=180
 # Behavior
 ignore-empty-password
 clock
-indicator
 
 # Colors
 color=1e1e2e
