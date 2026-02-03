@@ -13,7 +13,7 @@ alias ga='git add'
 alias gst='git status'
 alias glo='git log --oneline --graph --decorate'
 alias cm='git commit -am'
-alias rm='safe-rm'
+alias rm='trash'
 alias cloc='tokei'
 alias cava='~/.scripts/cava_pywal.sh'
 
