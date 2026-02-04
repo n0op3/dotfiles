@@ -78,6 +78,13 @@ setup() {
     sudo systemctl enable emptty
 }
 
+echo THIS SCRIPT IS DEPRECATED!!!
+echo I moved from Arch to NixOS, and stopped updating this script.
+echo It is missing many things I currently use in my setup.
+echo If you still want to continue, press enter.
+echo If you want to quit, press Ctrl+C
+read
+
 install_toolchains
 install_deps
 setup
