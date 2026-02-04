@@ -5,5 +5,5 @@ if [ $? -eq 0 ]; then
     hyprctl keyword decoration:inactive_opacity 1
 else
     swww-daemon &
-    set_wallpaper.sh ~/.cache/current_wallpaper.png
+    hyprctl reload
 fi
