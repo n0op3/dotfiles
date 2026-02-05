@@ -24,6 +24,7 @@
             "critical": 10
         },
         "format": "{icon}",
+        "tooltip-format": "{capacity}% - empty in {time}",
         "format-time": "{H} hr {M} min",
         "format-icons": [
             " ",
