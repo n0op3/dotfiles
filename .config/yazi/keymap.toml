@@ -1,4 +1,9 @@
 [[mgr.prepend_keymap]]
+on = [" ", "x"]
+run = "close"
+desc = "Close the current tab"
+
+[[mgr.prepend_keymap]]
 on = [ "u", "a" ]
 run = "plugin yamb save"
 desc = "Add bookmark"
