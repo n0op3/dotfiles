@@ -15,21 +15,18 @@
     background: @color0;
     border: 2px solid @color1;
     border-radius: 22px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .modules-center {
     background: @color0;
     border: 2px solid @color1;
     border-radius: 22px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .modules-right {
     background: @color0;
     border: 2px solid @color1;
     border-radius: 22px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 window#waybar {
