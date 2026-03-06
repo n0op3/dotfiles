@@ -12,3 +12,5 @@ syshud -o v -p right & disown
 
 hyprctl clients | grep -q 'waybar' && pkill waybar
 pkill .waybar-wrapped && waybar & disown
+
+swaync-client --reload-css
