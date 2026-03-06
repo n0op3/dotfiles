@@ -6,3 +6,5 @@ else
     makoctl mode -r do-not-disturb
     notify-send "DND off"
 fi
+
+swaync-client --toggle-dnd
