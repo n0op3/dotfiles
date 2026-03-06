@@ -42,7 +42,6 @@
   },
   "widgets": [
     "label",
-    "buttons-grid",
     "mpris",
     "title",
     "dnd",
@@ -52,7 +51,7 @@
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
-      "button-text": " 󰎟 "
+      "button-text": "  "
     },
     "dnd": {
       "text": "Do not disturb"
@@ -68,31 +67,6 @@
     "volume": {
       "label": "󰕾",
         "show-per-app": true
-    },
-    "buttons-grid": {
-      "actions": [
-        {
-          "label": " ",
-          "command": "amixer set Master toggle"
-        },
-        {
-          "label": "",
-          "command": "amixer set Capture toggle"
-        },
-        {
-          "label": " ",
-          "command": "nm-connection-editor"
-        },
-        {
-          "label": "󰂯",
-          "command": "blueman-manager"
-        },
-        {
-          "label": "󰏘",
-          "command": "nwg-look"
-        }
-        
-      ]
     }
   }
 }
