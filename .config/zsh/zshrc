@@ -1,5 +1,6 @@
 if [[ $(tty | grep /dev/tty1) ]]; then
     start-hyprland
+    exit
 fi
 
 source ~/.config/zsh/functions
