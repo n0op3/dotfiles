@@ -13,19 +13,19 @@
 
 .modules-left {
     background: @color0;
-    border: 2px solid @color1;
+    border: 2px solid @color6;
     border-radius: 22px;
 }
 
 .modules-center {
     background: @color0;
-    border: 2px solid @color1;
+    border: 2px solid @color6;
     border-radius: 22px;
 }
 
 .modules-right {
     background: @color0;
-    border: 2px solid @color1;
+    border: 2px solid @color6;
     border-radius: 22px;
 }
 
@@ -57,15 +57,15 @@ window#waybar {
 }
 
 #network {
-    color: @color13;
+    color: @color63;
 }
 
 #pulseaudio {
-    color: @color11;
+    color: @color61;
 }
 
 #battery {
-    color: @color12;
+    color: @color62;
 }
 
 #custom-notification {

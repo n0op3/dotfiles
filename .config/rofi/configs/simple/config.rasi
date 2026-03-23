@@ -16,7 +16,7 @@ window {
 	orientation: vertical;
     border: 2px solid;
     border-radius: 8px;
-    border-color: @foreground;
+    border-color: @urgent-background;
 }
 
 element {

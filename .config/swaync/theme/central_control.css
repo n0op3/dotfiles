@@ -24,7 +24,7 @@
 .control-center {
   background: alpha(@background, 1);
   border-radius: 16px;
-  border: 1px solid @selected;
+  border: 2px solid @selected;
   box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
   margin: 18px;
   padding: 12px;
