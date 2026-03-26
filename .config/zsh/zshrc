@@ -1,4 +1,4 @@
-if [[ $(tty | grep /dev/tty1) ]]; then
+if [ "$(tty)" = "/dev/tty1" ]; then
     start-hyprland
     exit
 fi
