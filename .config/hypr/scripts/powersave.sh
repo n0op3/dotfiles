@@ -6,7 +6,7 @@ if [ -f $HOME/.cache/hyprland-powersave ]; then
 else
     hyprctl --batch "\
         keyword animations:enabled 0;\
-        keyword decoration:active_opacity 0.98;\
+        keyword decoration:active_opacity 0.95;\
         keyword decoration:inactive_opacity 0.85;\
         keyword decoration:shadow:enabled 0;\
         keyword decoration:rounding 0;\
