@@ -2,6 +2,11 @@ if [ "$(tty)" = "/dev/tty1" ]; then
     echo "Starting Hyprland..."
     start-hyprland >> /tmp/hyprland.log
     exit
+else
+    if [ $(tty | grep tty) ]; then
+        echo "Restoring Hyprland..."
+        ~/.scripts/restore_hyprland.sh
+    fi
 fi
 
 source ~/.config/zsh/functions
