@@ -14,9 +14,6 @@ source ~/.config/zsh/functions
 #eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)" # Oh My Posh
 eval "$(starship init zsh)"                                                # Starship
 
-# FZF
-source <(fzf --zsh)
-
 # Zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
@@ -84,8 +81,8 @@ zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
 
-# Load completions
-(autoload -U compinit && compinit & )
+# Load completions (cached)
+autoload -Uz compinit && compinit -C
 
 # Completion styling
 zstyle ':completion:*' menu no
@@ -94,5 +91,3 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls $realpath'
 
 source ~/.config/zsh/aliases
-
-startup
