@@ -14,3 +14,5 @@ hyprctl clients | grep -q 'waybar' && pkill waybar
 pkill .waybar-wrapped && waybar & disown
 
 swaync-client --reload-css
+
+$HOME/.config/hypr/scripts/powersave.sh sync
