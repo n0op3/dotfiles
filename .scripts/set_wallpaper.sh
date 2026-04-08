@@ -3,7 +3,7 @@ if identify ~/.cache/current_wallpaper | grep GIF; then
     filter="--filter Nearest"
 fi
 
-transition="center --transition-duration 1"
+transition="random --transition-duration 0.5"
 
 if [ -f ~/.cache/hyprland-powersave ]; then
     transition=none
