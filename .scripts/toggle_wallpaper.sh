@@ -1,9 +1,9 @@
-pidof swww-daemon
+pidof awww-daemon
 if [ $? -eq 0 ]; then
-    swww kill
+    awww kill
     hyprctl keyword decoration:active_opacity 1
     hyprctl keyword decoration:inactive_opacity 1
 else
-    swww-daemon &
+    awww-daemon &
     hyprctl reload
 fi

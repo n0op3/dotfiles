@@ -9,7 +9,7 @@ if [ -f ~/.cache/hyprland-powersave ]; then
     transition=none
 fi
 
-swww img "$1" --transition-type $transition $filter
+awww img "$1" --transition-type $transition $filter
 
 cp "$1" ~/.cache/current_wallpaper
 cp "$1" ~/.cache/current_wallpaper.png
