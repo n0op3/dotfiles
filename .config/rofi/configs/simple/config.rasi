@@ -19,17 +19,24 @@ window {
     border-color: @urgent-background;
 }
 
+inputbar {
+    border: 2px solid;
+    border-color: @active-background;
+    padding: 4px;
+    border-radius: 8px;
+}
+
 element {
     border-radius: 8px;
     text-color: @normal-background;
 }
 
 element-icon {
-    size: 32;
+    size: 48;
 }
 
 listview {
-    lines: 12;
+    lines: 8;
 }
 
 element selected.normal {
