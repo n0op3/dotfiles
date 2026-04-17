@@ -1,4 +1,5 @@
 if [ "$(tty)" = "/dev/tty1" ]; then
+    clear
     echo "Starting Hyprland..."
     start-hyprland >> /tmp/hyprland.log
     exit
