@@ -1,0 +1,124 @@
+{
+    "margin-top": 8,
+    "margin-bottom": 8,
+    "height": 38,
+    "spacing": 16,
+    "modules-left": [
+        "cpu",
+        "memory"
+    ],
+    "modules-center": [
+        "clock",
+        "hyprland/workspaces",
+        "network",
+        "pulseaudio",
+        "battery",
+        "custom/date",
+    ],
+    "modules-right": [
+        "tray",
+        "custom/notification"
+    ],
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon}",
+        "tooltip-format": "{capacity}% - empty in {time}",
+        "format-time": "{H} hr {M} min",
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
+        ],
+        "format-charging": "󰉁{icon}"
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "tooltip-format": "{volume}%",
+        "format-icons": {
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ],
+            "default-muted": "󰝟 ",
+            "headphone": "󰋋 ",
+            "headphone-muted": "󰟎 ",
+            "headset": "󰋎 ",
+            "headset-muted": "󰋐 "
+        }
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "interval": 5
+    },
+    "network": {
+        "format-wifi": "{icon}",
+        "format-disabled": "󰖪 ",
+        "format-disconnected": "󱛅 ",
+        "tooltip-format": "{essid}",
+        "format-icons": [
+            "󰤯 ",
+            "󰤟 ",
+            "󰤢 ",
+            "󰤥 ",
+            "󰤨 "
+        ]
+    },
+    "cpu": {
+        "format": "CPU {usage}%",
+        "interval": 5
+    },
+    "memory": {
+        "format": "RAM {percentage}%",
+        "interval": 5
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十",
+            "active": "󰻃"
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+    "custom/date": {
+        "format": "{text}",
+        "exec": "date +\"%d/%m\""
+    },
+    "custom/notification": {
+        "tooltip": true,
+        "format": "<span size='16pt'>{icon}</span>",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂜",
+            "dnd-notification": "󰂠",
+            "dnd-none": "󰪓",
+            "inhibited-notification": "󰂛",
+            "inhibited-none": "󰪑",
+            "dnd-inhibited-notification": "󰂛",
+            "dnd-inhibited-none": "󰪑"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+}
