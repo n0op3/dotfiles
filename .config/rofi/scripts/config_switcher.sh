@@ -20,7 +20,7 @@ elif [[ "$STATE" == set_config* ]]; then
     CONFIG=${STATE#set_config*:}
 
     cd ~/.config/$APP
-    swap_config.sh $CONFIG > /dev/null 2>&1
+    switch_config.sh $CONFIG > /dev/null 2>&1
     cd
 
     PROCESS="$(ps -eo comm,args | grep $APP | head -n 1)"
