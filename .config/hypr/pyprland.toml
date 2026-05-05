@@ -1,9 +1,0 @@
-[pyprland]
-plugins = [
- "magnify",
- "system_notifier"
-]
-
-[[system_notifier.sources]]
-command = "journalctl -fx"
-parser = "journal"
