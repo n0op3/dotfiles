@@ -31,7 +31,6 @@ elif [[ "$STATE" == set_config* ]]; then
         coproc ( ${PROCESS#* } > /dev/null 2>&1)
     fi
 
-    notify-send "Config for $APP changed to $CONFIG."
     exit
 else
     # List configs for the app
