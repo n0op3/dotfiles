@@ -1,3 +1,7 @@
+if [[ $# -eq 0 ]]; then
+    exit
+fi
+
 filter=""
 if identify ~/.cache/current_wallpaper | grep GIF; then
     filter="--filter Nearest"
