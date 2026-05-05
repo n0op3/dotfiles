@@ -11,12 +11,7 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run,filebrowser,window";
     show-icons:                 true;
-    display-drun:               "";
-    display-run:                "";
-    display-filebrowser:        "";
-    display-window:             "";
 	drun-display-format:        "{name}";
 	window-format:              "{w} · {c} · {t}";
 }
@@ -39,7 +34,7 @@ window {
     anchor:                      center;
     fullscreen:                  false;
     width:                       30%;
-    height:                      680px;
+    height:                      660px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -63,10 +58,10 @@ mainbox {
 
 listbox {
     spacing:                     20px;
-    padding:                     20px;
+    padding:                     100px 100px 100px 0px;
     background-color:            transparent;
     orientation:                 vertical;
-    children:                    [ "message", "listview", "mode-switcher" ];
+    children:                    [ "message", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
@@ -101,13 +96,6 @@ entry {
     placeholder-color:           inherit;
 }
 
-/*****----- Mode Switcher -----*****/
-mode-switcher{
-    enabled:                     true;
-    spacing:                     10px;
-    background-color:            transparent;
-    text-color:                  @foreground;
-}
 button {
     padding:                     12px;
     border-radius:               8px;
