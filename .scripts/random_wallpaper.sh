@@ -1,1 +1,2 @@
-set_wallpaper.sh $(find -L $wallpapers_path -type f | shuf -n 1)
+#!/usr/bin/env bash
+set_wallpaper.sh $(find $wallpapers_path -maxdepth 1 -type f | shuf -n 1)
