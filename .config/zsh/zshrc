@@ -1,3 +1,5 @@
+export SHELL=$(which zsh)
+
 if [ "$(tty)" = "/dev/tty1" ]; then
     clear
     echo "Starting Hyprland..."
