@@ -39,6 +39,8 @@
     "pulseaudio": {
         "format": "{icon}",
         "tooltip-format": "{volume}%",
+        "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pwvucontrol",
         "format-icons": {
             "default": [
                 "󰕿",
