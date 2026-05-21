@@ -12,6 +12,7 @@ alias grep='rg'
 alias rm='trash'
 alias cloc='tokei'
 alias cava='~/.scripts/cava_pywal.sh'
+alias d='wget'
 
 # Cargo
 alias cr='cargo run'
