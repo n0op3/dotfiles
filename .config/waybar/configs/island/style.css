@@ -41,6 +41,8 @@ window#waybar {
 
 #workspaces button.active {
     background: linear-gradient(135deg, @color4, @color6, @color8);
+    padding-right: 8px;
+    padding-left: 5px;
     color: @color0;
 }
 
