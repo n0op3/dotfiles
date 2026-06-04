@@ -31,14 +31,12 @@
   background: alpha(@background, .85);
   box-shadow: 0 0 8px 0 rgba(0,0,0,.6);
   border: 2px solid @selected;
-  border-radius: 16px;
   margin: 16px;
   padding: 0;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification {
   padding: 6px;
-  border-radius: 12px;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification.critical {
@@ -54,7 +52,6 @@
 }
 
 .floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action {
-  border-radius: 8px;
   background-color: @background-alt ;
   margin: 6px;
   border: 1px solid transparent;
@@ -86,7 +83,6 @@
 .floating-notifications.background .notification-row .notification-background .close-button {
   margin: 6px;
   padding: 2px;
-  border-radius: 6px;
   background-color: transparent;
   border: 1px solid transparent;
 }

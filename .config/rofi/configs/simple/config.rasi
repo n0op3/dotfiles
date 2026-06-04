@@ -1,5 +1,5 @@
 @theme ".config/rofi/configs/shared.rasi"
-?import ".cache/rofi/rounding.rasi"
+?import ".cache/rofi-rounding.rasi"
 
 configuration {
 	show-icons: true;
