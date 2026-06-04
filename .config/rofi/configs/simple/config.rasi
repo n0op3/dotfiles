@@ -1,22 +1,9 @@
-@theme "~/.cache/wal/colors-rofi-dark.rasi"
-
-textbox-prompt-colon {
-    str: "";
-}
+@theme ".config/rofi/configs/shared.rasi"
+?import ".cache/rofi/rounding.rasi"
 
 configuration {
 	show-icons: true;
-	location: 0;
-	font: "JetBrainsMono Nerd Font 14";	
 	display-drun: "Launch";
-}
-
-window { 
-	width: 25%;
-	orientation: vertical;
-    border: 2px solid;
-    border-radius: 8px;
-    border-color: @urgent-background;
 }
 
 inputbar {

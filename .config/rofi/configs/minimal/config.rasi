@@ -1,21 +1,5 @@
-@theme "~/.cache/wal/colors-rofi-dark.rasi"
-
-textbox-prompt-colon {
-    str: "";
-}
-
-configuration {
-	location: 0;
-	font: "JetBrainsMono Nerd Font 12";	
-	display-drun: "";
-}
-
-window { 
-	width: 25%;
-	orientation: vertical;
-    border: 2px solid;
-    border-color: @foreground;
-}
+@theme ".config/rofi/configs/shared.rasi"
+?import ".cache/rofi/rounding.rasi"
 
 element selected {
   border-radius: 0px;

@@ -34,7 +34,7 @@ elif [[ "$STATE" == set_config* ]]; then
     exit
 else
     # List configs for the app
-    for config in $(ls ~/.config/$1/configs)
+    for config in $(find ~/.config/$1/configs -maxdepth 1 -type d -printf '%P\n')
     do
         echo -en "$config\0info\x1fset_config$1:$config\n"
     done
