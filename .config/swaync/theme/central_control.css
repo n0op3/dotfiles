@@ -53,7 +53,6 @@
 .control-center .notification-row .notification-background .notification > *:last-child > * .notification-action {
   background: alpha(@selected, .6);
   color: @text;
-  border-radius: 12px;
   margin: 6px;
 }
 
@@ -69,7 +68,6 @@
 
 .control-center .notification-row .notification-background .close-button {
   background: transparent;
-  border-radius: 6px;
   color: @text;
   margin: 0px;
   padding: 4px;
@@ -86,8 +84,7 @@
 progressbar,
 progress,
 trough {
-  border-radius: 12px;
-}
+  }
 
 progressbar {
   background-color: rgba(255,255,255,.1);
@@ -115,7 +112,6 @@ progressbar {
   background: transparent;
   color: @text;
   margin: 4px; 
-  border-radius: 6px;
   padding: 4px;
 }
 
@@ -134,7 +130,6 @@ progressbar {
 
 .widget-title button {
   background: @background-alt;
-  border-radius: 6px;
   padding: 4px 16px;
 }
 
@@ -155,7 +150,6 @@ progressbar {
 .widget-dnd > switch {
   background: @background-alt;
   font-size: initial;
-  border-radius: 8px;
   box-shadow: none;
   padding: 2px;
 }
@@ -174,15 +168,13 @@ progressbar {
 
 .widget-dnd > switch slider {
   background: @text;
-  border-radius: 6px;
-}
+  }
 
   /* Buttons menu */
 .widget-buttons-grid {
   font-size: x-large;
   padding: 6px 2px;
   margin: 6px;
-  border-radius: 12px;
   background: @background-alt;
 }
 
@@ -190,8 +182,7 @@ progressbar {
   margin: 4px 10px;
   padding: 6px 12px;
   background: transparent;
-  border-radius: 8px;
-}
+  }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
   background: @hover;
@@ -201,23 +192,20 @@ progressbar {
   /* Music player */
 .widget-mpris {
     background: @background-alt;
-    border-radius: 16px;
-    color: @text;
+      color: @text;
     margin:  20px 6px;
 }
 
   /* NOTE: Background need *opacity 1* otherwise will turn into the album art blurred  */
 .widget-mpris-player {
     background-color: @background-sec;
-    border-radius: 22px;
     padding: 6px 14px;
     margin: 6px;
 }
 
 .widget-mpris > box > button {
   color: @text;
-  border-radius: 20px;
-}
+  }
  
 .widget-mpris button {
   color: alpha(@text, .6);
@@ -228,8 +216,7 @@ progressbar {
 }
 
 .widget-mpris-album-art {
-  border-radius: 16px;
-}
+  }
  
 .widget-mpris-title {
     font-weight: 700;
@@ -251,5 +238,4 @@ picture.mpris-background {
   color: @background;
   padding: 4px;
   margin: 6px;
-  border-radius: 6px;
-}
+  }
