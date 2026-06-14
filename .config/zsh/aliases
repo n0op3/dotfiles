@@ -13,6 +13,7 @@ alias rm='trash'
 alias cloc='tokei'
 alias cava='~/.scripts/cava_pywal.sh'
 alias d='wget'
+alias tmux='tmux -L "$(pwd | sha256sum)"'
 
 # Cargo
 alias cr='cargo run'
