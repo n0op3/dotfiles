@@ -1,4 +1,5 @@
 export SHELL=$(which zsh)
+export TMUX_SOCKET_NAME="tmux-$RANDOM"
 
 if [ "$(tty)" = "/dev/tty1" ]; then
     clear
