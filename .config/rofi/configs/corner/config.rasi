@@ -1,0 +1,5 @@
+@theme ".config/rofi/configs/minimal/config.rasi"
+
+configuration {
+  location: 7;
+}
