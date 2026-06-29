@@ -26,12 +26,15 @@
         "tooltip-format": "{capacity}% - empty in {time}",
         "format-time": "{H} hr {M} min",
         "format-icons": [
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " "
+            " ",
+            "󰪞 ",
+            "󰪟 ",
+            "󰪠 ",
+            "󰪡 ",
+            "󰪢 ",
+            "󰪣 ",
+            "󰪤 ",
+            "󰪥 "
         ],
         "format-charging": "󰉁{icon}"
     },
