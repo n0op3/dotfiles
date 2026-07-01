@@ -6,13 +6,11 @@ if [ "$(tty)" = "/dev/tty1" ]; then
     echo "Starting Hyprland..."
     exec start-hyprland >> /tmp/hyprland.log
 else
-        if [[ $(tty) =~ ^/dev/tty[0-9]+$ ]]; then
+    if [[ $(tty) =~ ^/dev/tty[0-9]+$ ]]; then
         echo "Restoring Hyprland..."
         ~/.scripts/restore_hyprland.sh
     fi
 fi
-
-source ~/.config/zsh/functions
 
 # eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"  # Oh My Posh
 eval "$(starship init zsh)"                                                # Starship
@@ -74,6 +72,7 @@ zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
 
+source ~/.config/zsh/functions
 source ~/.config/zsh/aliases
 
 startup

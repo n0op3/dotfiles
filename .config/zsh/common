@@ -7,15 +7,11 @@ apply_pywal_colors() {
             export PYWAL=1
         fi
     else
-        if [ "$PYWAL" -eq 1 ]; then
+        if [ "${PYWAL:-0}" -eq 1 ]; then
             reset
         fi
         export PYWAL=0
     fi
-}
-
-precmd() {
-    apply_pywal_colors
 }
 
 apply_pywal_colors

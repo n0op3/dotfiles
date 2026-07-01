@@ -3,8 +3,11 @@
 source ~/.config/zsh/common
 
 startup() {
-    # Start the SSH agent
-    if [ -z "$SSH_AUTH_SOCK" ]; then
+    # Start the SSH agent only if no agent is reachable
+    if [ -z "$SSH_AUTH_SOCK" ] || ! ssh-add -l >/dev/null 2>&1; then
         eval "$(ssh-agent -s)" > /dev/null
     fi
 }
+
+# Kill our ssh-agent on shell exit to prevent accumulation
+trap 'test -n "$SSH_AGENT_PID" && kill "$SSH_AGENT_PID" 2>/dev/null' EXIT
