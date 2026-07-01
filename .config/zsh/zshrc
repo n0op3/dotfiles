@@ -4,10 +4,9 @@ export TMUX_SOCKET_NAME="tmux-$RANDOM"
 if [ "$(tty)" = "/dev/tty1" ]; then
     clear
     echo "Starting Hyprland..."
-    start-hyprland >> /tmp/hyprland.log
-    exit
+    exec start-hyprland >> /tmp/hyprland.log
 else
-    if [ $(tty | grep tty) ]; then
+        if [[ $(tty) =~ ^/dev/tty[0-9]+$ ]]; then
         echo "Restoring Hyprland..."
         ~/.scripts/restore_hyprland.sh
     fi
@@ -56,16 +55,6 @@ setopt hist_find_no_dups
 
 # cd
 setopt autocd
-
-# Yazi
-function y() {
-    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-    yazi "$@" --cwd-file="$tmp"
-    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-        builtin cd -- "$cwd"
-    fi
-    rm -f -- "$tmp"
-}
 
 # Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
