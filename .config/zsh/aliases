@@ -15,6 +15,7 @@ alias cava='~/.scripts/cava_pywal.sh'
 alias d='wget'
 alias oc='opencode'
 alias y='yazi'
+alias tx='tmux'
 
 # Cargo
 alias cr='cargo run'
