@@ -1,5 +1,5 @@
-"$schema" = 'https://starship.rs/config-schema.json'
-
-[character]
-success_symbol = '[λ❯](bold green)'
-error_symbol = '[λ❯](bold red)'
+[custom.jj]
+symbol = ""
+format = "[[ $symbol $output ](fg:color_fg0 bg:color_aqua)]($style)"
+when = "jj-starship detect"
+shell = ["jj-starship", "--no-color", "--no-symbol"]
