@@ -34,7 +34,7 @@ alias gc='git checkout'
 alias gcl='git clone --recursive'
 alias gs='git -c color.ui=always status'
 alias gbi='git bisect'
-alias glo='git log --oneline --graph --decorate --all'
+alias glo='git log --oneline --graph --decorate'
 
 # Jujutsu
 alias jji='jj git init --colocate'
