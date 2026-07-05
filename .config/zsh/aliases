@@ -19,6 +19,7 @@ alias tx='tmux'
 # Cargo
 alias cr='cargo run'
 alias cb='cargo build'
+alias ct='cargo test'
 alias cc='cargo check'
 alias ccc='cargo clippy'
 alias tmux='tmux -L "$TMUX_SOCKET_NAME"'
