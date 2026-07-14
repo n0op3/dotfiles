@@ -1,28 +1,28 @@
 export SHELL=$(which zsh)
 export TMUX_SOCKET_NAME="tmux-$RANDOM"
 
-if [ "$(tty)" = "/dev/tty1" ]; then
-    clear
-    echo "Starting Hyprland..."
-    exec start-hyprland >> /tmp/hyprland.log
-else
-    if [[ $(tty) =~ ^/dev/tty[0-9]+$ ]]; then
-        echo "Restoring Hyprland..."
-        ~/.scripts/restore_hyprland.sh
-    fi
-fi
+# if [ "$(tty)" = "/dev/tty1" ]; then
+#     clear
+#     echo "Starting Hyprland..."
+#     exec start-hyprland >> /tmp/hyprland.log
+# else
+#     if [[ $(tty) =~ ^/dev/tty[0-9]+$ ]]; then
+#         echo "Restoring Hyprland..."
+#         ~/.scripts/restore_hyprland.sh
+#     fi
+# fi
 
 # eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"  # Oh My Posh
 eval "$(starship init zsh)"                                                # Starship
 
 # rustup
-eval "$(rustup completions zsh)"
+# eval "$(rustup completions zsh)"
 
 # FZF
-source <(fzf --zsh)
+# source <(fzf --zsh)
 
 # Zoxide
-eval "$(zoxide init --cmd cd zsh)"
+# eval "$(zoxide init --cmd cd zsh)"
 
 # Yazi
 function y() {
@@ -83,9 +83,12 @@ zstyle ':completion:*' matcher-list \
     'l:|=* r:|=*'
 
 # Plugins
-zinit light Aloxaf/fzf-tab
-zinit light zsh-users/zsh-autosuggestions
-zinit light zdharma-continuum/fast-syntax-highlighting
+zinit ice wait
+zinit load Aloxaf/fzf-tab
+zinit ice wait
+zinit load zsh-users/zsh-autosuggestions
+zinit ice wait
+zinit load zdharma-continuum/fast-syntax-highlighting
 
 source ~/.config/zsh/functions
 source ~/.config/zsh/aliases
