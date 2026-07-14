@@ -16,13 +16,13 @@ export TMUX_SOCKET_NAME="tmux-$RANDOM"
 eval "$(starship init zsh)"                                                # Starship
 
 # rustup
-# eval "$(rustup completions zsh)"
+eval "$(rustup completions zsh)"
 
 # FZF
-# source <(fzf --zsh)
+source <(fzf --zsh)
 
 # Zoxide
-# eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # Yazi
 function y() {
