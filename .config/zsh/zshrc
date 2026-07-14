@@ -83,10 +83,9 @@ zstyle ':completion:*' matcher-list \
     'l:|=* r:|=*'
 
 # Plugins
+zinit load zsh-users/zsh-autosuggestions
 zinit ice wait
 zinit load Aloxaf/fzf-tab
-zinit ice wait
-zinit load zsh-users/zsh-autosuggestions
 zinit ice wait
 zinit load zdharma-continuum/fast-syntax-highlighting
 
