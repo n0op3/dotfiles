@@ -7,11 +7,11 @@
     ],
     "modules-center": [
         "clock",
-        "hyprland/workspaces",
+        "ext/workspaces",
         "network",
         "pulseaudio",
         "battery",
-        "custom/date",
+        "custom/date"
     ],
     "modules-right": [
         "tray",
@@ -81,7 +81,8 @@
         "format": "RAM {percentage}%",
         "interval": 5
     },
-    "hyprland/workspaces": {
+    "ext/workspaces": {
+        "on-click": "activate",
         "format": "{icon}",
         "format-icons": {
             "1": "一",
