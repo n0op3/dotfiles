@@ -1,8 +1,8 @@
 [mgr]
 prepend_keymap = [
   { on = "u", run = "plugin restore", desc = "Restore last deleted files/folders" },
-  { on = ["r", "u"], run = "plugin restore", desc = "Restore last deleted files/folders" },
-  { on = ["r", "U"], run = "plugin restore -- --interactive", desc = "Restore deleted files/folders (Interactive)" },
+  { on = ["u", "u"], run = "plugin restore", desc = "Restore last deleted files/folders" },
+  { on = ["u", "U"], run = "plugin restore -- --interactive", desc = "Restore deleted files/folders (Interactive)" },
   { on = ["u", "a"], run = "plugin yamb save", desc = "Add bookmark" },
   { on = "M", run = "plugin mount" },
   { on = ["u", "g"], run = "plugin yamb jump_by_key", desc = "Jump bookmark by key" },
