@@ -1,0 +1,26 @@
+@theme ".config/rofi/configs/shared.rasi"
+?import ".cache/rofi-rounding.rasi"
+
+configuration {
+	show-icons: true;
+}
+
+inputbar {
+    border: 2px solid;
+    border-color: @active-background;
+    padding: 4px;
+    border-radius: 32px;
+}
+
+element {
+    border-radius: 32px;
+    text-color: @normal-background;
+}
+
+element-icon {
+    size: 32;
+}
+
+listview {
+    lines: 12;
+}
