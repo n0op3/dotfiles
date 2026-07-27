@@ -18,6 +18,10 @@ element {
     text-color: @normal-background;
 }
 
+element-text {
+    vertical-align: 0.5;
+}
+
 element-icon {
     size: 32;
 }
