@@ -2,7 +2,6 @@
 
 * {
     border: none;
-    border-radius: 14px;
     min-height: 0;
     padding: 0 2px;
     font-size: 16;
@@ -12,6 +11,7 @@
 
 window#waybar {
     background-color: #161618;
+    border-radius: 14px;
 }
 
 .modules-left,

@@ -3,6 +3,7 @@
 
 configuration {
 	show-icons: true;
+    font: "Rubik Bold 12";
 }
 
 inputbar {
