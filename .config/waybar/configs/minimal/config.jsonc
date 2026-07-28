@@ -1,0 +1,108 @@
+{
+    "height": 34,
+    "spacing": 16,
+    "modules-left": [
+        "clock",
+        "ext/workspaces"
+    ],
+    "modules-center": [
+        "network",
+        "pulseaudio",
+        "battery"
+    ],
+    "modules-right": [
+        "tray"
+    ],
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon}",
+        "tooltip-format": "{capacity}% - empty in {time}",
+        "format-time": "{H} hr {M} min",
+        "format-icons": [
+            " ",
+            "󰪞 ",
+            "󰪟 ",
+            "󰪠 ",
+            "󰪡 ",
+            "󰪢 ",
+            "󰪣 ",
+            "󰪤 ",
+            "󰪥 "
+        ],
+        "format-charging": "󰉁{icon}"
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "tooltip-format": "{volume}%",
+        "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pwvucontrol",
+        "format-icons": {
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ],
+            "default-muted": "󰝟 ",
+            "headphone": "󰋋 ",
+            "headphone-muted": "󰟎 ",
+            "headset": "󰋎 ",
+            "headset-muted": "󰋐 "
+        }
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%d/%m}",
+        "interval": 5
+    },
+    "network": {
+        "format-wifi": "{icon}",
+        "format-disabled": "󰖪 ",
+        "format-disconnected": "󱛅 ",
+        "tooltip-format": "{essid}",
+        "format-icons": [
+            "󰤯 ",
+            "󰤟 ",
+            "󰤢 ",
+            "󰤥 ",
+            "󰤨 "
+        ]
+    },
+    "cpu": {
+        "format": "CPU {usage}%",
+        "interval": 5
+    },
+    "memory": {
+        "format": "RAM {percentage}%",
+        "interval": 5
+    },
+    "ext/workspaces": {
+        "on-click": "activate",
+    },
+    "custom/date": {
+        "format": "{text}",
+        "exec": "date +\"%d/%m\""
+    },
+    "custom/notification": {
+        "tooltip": true,
+        "format": "<span size='16pt'>{icon}</span>",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂜",
+            "dnd-notification": "󰂠",
+            "dnd-none": "󰪓",
+            "inhibited-notification": "󰂛",
+            "inhibited-none": "󰪑",
+            "dnd-inhibited-notification": "󰂛",
+            "dnd-inhibited-none": "󰪑"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    }
+}

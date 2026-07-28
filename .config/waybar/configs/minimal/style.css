@@ -1,0 +1,80 @@
+@import '../../.cache/wal/colors-waybar.css';
+
+* {
+    padding: 0 2px;
+    font-size: 16;
+    font-family: "Rubik";
+    font-weight: 600;
+}
+
+window#waybar {
+    background-color: #161618;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    border-radius: 8px;
+    margin: 4px 0px 4px 0px;
+    padding: 0px 4px 0px 4px;
+}
+
+#workspaces button {
+    color: @fg;
+    border-radius: 0px;
+}
+
+#workspaces button.active {
+    border-bottom: 2px solid @color1;
+}
+
+#clock {
+    color: @fg;
+}
+
+#cpu {
+    color: @color5;
+}
+
+#memory {
+    color: @color8;
+}
+
+#network {
+    color: @color63;
+}
+
+#pulseaudio {
+    color: @color61;
+}
+
+#battery {
+    color: @color62;
+}
+
+#battery.warning:not(.charging) {
+    color: yellow;
+}
+
+#battery.critical:not(.charging) {
+    color: red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        color: #ffffff;
+    }
+}
+
+#custom-notification {
+    padding-right: 12px;
+}
+
+#tray {
+    padding-right: 0px;
+}
