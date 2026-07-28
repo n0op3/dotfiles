@@ -1,9 +1,12 @@
-if ! wal -i ~/.cache/current_wallpaper.png --saturate -0.1 --contrast 2; then
+saturation=${1:--0.1}
+contrast=${2:-2}
+
+if ! wal -i ~/.cache/current_wallpaper.png --saturate $saturation --contrast $contrast; then
     notify-send "Failed to generate color scheme"
     exit 1
 fi
 
-walcord & disown
+themecord & disown
 
 pywalfox update & disown
 
