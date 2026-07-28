@@ -11,7 +11,7 @@
 }
 
 window#waybar {
-    background-color: @color0;
+    background-color: darker(@color0);
 }
 
 .modules-left,
