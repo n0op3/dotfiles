@@ -1,5 +1,6 @@
 [mgr]
 prepend_keymap = [
+  { on = ["t", "x"], run = "tab_close", desc = "Close the current tab" },
   { on = "u", run = "plugin restore", desc = "Restore last deleted files/folders" },
   { on = ["u", "u"], run = "plugin restore", desc = "Restore last deleted files/folders" },
   { on = ["u", "U"], run = "plugin restore -- --interactive", desc = "Restore deleted files/folders (Interactive)" },
