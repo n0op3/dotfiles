@@ -1,0 +1,12 @@
+Type=X-GNOME-Metatheme
+[Desktop Entry]
+Name=RosePine-Light
+Comment=An Flat Gtk+ theme based on Elegant Design
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=RosePine-Light
+MetacityTheme=RosePine-Light
+IconTheme=Tela-circle
+CursorTheme=RosePine-cursors
+ButtonLayout=close,minimize,maximize:menu

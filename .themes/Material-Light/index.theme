@@ -1,0 +1,12 @@
+Type=X-GNOME-Metatheme
+[Desktop Entry]
+Name=Material-Light
+Comment=An Flat Gtk+ theme based on Elegant Design
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Material-Light
+MetacityTheme=Material-Light
+IconTheme=Tela-circle
+CursorTheme=Material-cursors
+ButtonLayout=close,minimize,maximize:menu
