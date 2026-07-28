@@ -6,11 +6,9 @@ if ! wal -i ~/.cache/current_wallpaper.png --saturate $saturation --contrast $co
     exit 1
 fi
 
-themecord & disown
-
+swaync-client --reload-css & disown
+themecord -p & disown
 pywalfox update & disown
 
 hyprctl clients | grep -q 'waybar' && pkill waybar
 pkill .waybar-wrapped && waybar & disown
-
-swaync-client --reload-css
