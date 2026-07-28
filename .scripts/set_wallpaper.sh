@@ -29,4 +29,4 @@ rm ~/.config/rofi/background.png
 magick ~/.cache/current_wallpaper.png -resize 1000x400 ~/.config/rofi/background.png # to speed up rofi image loading times if the wallpaper is used in the theme
 
 sleep 1
-regen_pywal.sh
+regen_pywal.sh -i ~/.cache/current_wallpaper.png
