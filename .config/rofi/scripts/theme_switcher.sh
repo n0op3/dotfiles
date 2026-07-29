@@ -13,9 +13,9 @@ if [[ "$STATE" == "main" ]]; then
     done
 else
     if [[ "$1" == "wallpaper" ]]; then
-        regen_pywal.sh -i ~/.cache/current_wallpaper.png >/dev/null 2>&1 & disown
+        regen_pywal.sh -i ~/.cache/current_wallpaper.png > /dev/null 2>&1 & disown
     else
-        regen_pywal.sh --theme "$1" >/dev/null 2>&1 & disown
+        regen_pywal.sh --theme "$1" > /dev/null 2>&1 & disown
     fi
     exit
 fi
