@@ -15,7 +15,7 @@ prepend_keymap = [
 shell 'set_wallpaper.sh "$1"; regen_pywal.sh'
 ''', desc = "Set the current image as a wallpaper" },
   { on = "<C-n>", run = '''
-shell 'dragon-drop -x -i -T "$1"'
+shell 'dragon-drop -x -i -T "$@"'
 ''' },
 ]
 

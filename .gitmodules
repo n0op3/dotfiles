@@ -19,3 +19,6 @@
 [submodule ".config/hypr"]
 	path = .config/hypr
 	url = https://github.com/n0op3/hypr
+[submodule ".config/quickshell/hyprquickpaper"]
+	path = .config/quickshell/hyprquickpaper
+	url = https://github.com/iamsurjog/hyprquickpaper
