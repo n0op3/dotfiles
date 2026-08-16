@@ -24,17 +24,9 @@ find "$wallpaper_path" -type f \( \
         continue
     fi
 
-    echo "Generating thumbnail for $filename"
+    echo "Generating thumbnail for $img"
 
-    convert "$img" -thumbnail x500 -strip -quality 85 "$out" &
-
-    # Only limit jobs if batch_size > 0
-    if (( cache_batch_size > 0 )); then
-        while (( $(jobs -rp | wc -l) >= cache_batch_size )); do
-            wait -n
-        done
-    fi
-
+    magick "$img" -thumbnail x500 -strip -quality 85 "$out" &
 done
 
 wait

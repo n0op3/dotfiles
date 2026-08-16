@@ -117,6 +117,15 @@ PanelWindow {
                 width: parent.width * Math.max(0.5, 1.0 - dist * 0.15)
                 height: parent.height
 
+                Text {
+                    id: alt
+                    text: "Loading"
+                    anchors.centerIn: parent
+                    color: "white"
+                    font.italic: true
+                    opacity: 0.5
+                }
+
                 Behavior on width { NumberAnimation { duration: 150; easing.type: Easing.OutCubic } }
                 Image {
                     id: img
@@ -147,6 +156,8 @@ PanelWindow {
                         if (status === Image.Error) {
                             alt.text = "Caching"
                             retryTimer.start()
+                        } else if (status == Image.Ready) {
+                            // alt.text = ""
                         }
                     }
                 }

@@ -2,5 +2,5 @@
     "wallpaper_path": "/home/n0op3/Pictures/Wallpapers/",
     "cache_path": "/home/n0op3/.cache/quickshell/thumbs/",
     "number_of_pictures": 9,
-    "cache_batch_size": 20
+    "cache_batch_size": 32
 }
