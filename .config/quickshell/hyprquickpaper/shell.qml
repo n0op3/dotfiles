@@ -45,7 +45,8 @@ PanelWindow {
         folder: "file://" + configs.wallpaper_path
         showDirs: false
         nameFilters: ["*.png","*.jpg",".jpeg"]
-        sortField: FolderListModel.Name
+        sortField: FolderListModel.Time
+        // sortReversed: true
 
         onStatusChanged: {
             if (status === FolderListModel.Ready) {
