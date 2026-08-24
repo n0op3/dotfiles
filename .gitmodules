@@ -16,3 +16,6 @@
 [submodule ".config/hypr"]
 	path = .config/hypr
 	url = https://github.com/n0op3/hypr
+[submodule ".config/waybar/modules/cava"]
+	path = .config/waybar/modules/cava
+	url = https://github.com/ray-pH/polybar-cava

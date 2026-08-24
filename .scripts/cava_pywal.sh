@@ -1,7 +1,8 @@
 color1=$( awk 'match($0, /color0=\47(.*)\47/,a) { print a[1] }' ~/.cache/wal/colors.sh )
 color2=$( awk 'match($0, /color1=\47(.*)\47/,a) { print a[1] }' ~/.cache/wal/colors.sh )
 
-sed -e "s/%%%%%%%/$color1/" -e "s/+++++++/$color2/" ~/.config/cava/config.colors > /tmp/cava_colors
+sed -e "s/%%%%%%%/$color2/" -e "s/+++++++/$color1/" ~/.config/cava/config.colors > /tmp/cava_colors
+cat ~/.config/cava/config >> /tmp/cava_colors
 pid=$(pidof cava)
 
 if [ -z $1 ]; then
