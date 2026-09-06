@@ -1,0 +1,90 @@
+@import '../../.cache/wal/colors-waybar.css';
+
+* {
+    border: none;
+    min-height: 0;
+    padding: 0 2px;
+    font-size: 18;
+    font-family: "Rubik";
+    font-weight: 600;
+}
+
+window#waybar {
+    background-color: transparent;
+    border-radius: 14px;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: #161618;
+    border-radius: 8px;
+    margin: 4px 0px 4px 0px;
+    padding: 0px 4px 0px 4px;
+}
+
+#workspaces button {
+    border-radius: 8px;
+    margin: 4px;
+    padding: 0px 3px 0px 3px;
+    transition: all 0.2s ease-in-out;
+    background-color: #383840;
+}
+
+#workspaces button.active {
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: @color1;
+    color: @color0;
+}
+
+#clock {
+    color: @fg;
+}
+
+#cpu {
+    color: @color5;
+}
+
+#memory {
+    color: @color8;
+}
+
+#network {
+    color: @color63;
+}
+
+#pulseaudio {
+    color: @color61;
+}
+
+#battery {
+    color: @color62;
+}
+
+#battery.warning:not(.charging) {
+    color: yellow;
+}
+
+#battery.critical:not(.charging) {
+    color: red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        color: #ffffff;
+    }
+}
+
+#custom-notification {
+    padding-right: 12px;
+}
+
+#tray {
+    padding-right: 0px;
+}

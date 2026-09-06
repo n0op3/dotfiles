@@ -1,0 +1,10 @@
+{
+    "modules-center": [
+        "clock"
+    ],
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%d/%m}",
+        "interval": 5
+    }
+}

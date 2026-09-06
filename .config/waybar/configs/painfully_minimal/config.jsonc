@@ -1,0 +1,68 @@
+{
+    "spacing": 16,
+    "modules-center": [
+        "network",
+        "pulseaudio",
+        "battery",
+        "clock",
+        "tray"
+    ],
+    "modules-right": [],
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon}",
+        "tooltip-format": "{capacity}% - empty in {time}",
+        "format-time": "{H} hr {M} min",
+        "format-icons": [
+            " ",
+            "󰪞 ",
+            "󰪟 ",
+            "󰪠 ",
+            "󰪡 ",
+            "󰪢 ",
+            "󰪣 ",
+            "󰪤 ",
+            "󰪥 "
+        ],
+        "format-charging": "󰉁{icon}"
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "tooltip-format": "{volume}%",
+        "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pwvucontrol",
+        "format-icons": {
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ],
+            "default-muted": "󰝟 ",
+            "headphone": "󰋋 ",
+            "headphone-muted": "󰟎 ",
+            "headset": "󰋎 ",
+            "headset-muted": "󰋐 "
+        }
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%d/%m}",
+        "interval": 5
+    },
+    "network": {
+        "format-wifi": "{icon}",
+        "format-disabled": "󰖪 ",
+        "format-disconnected": "󱛅 ",
+        "tooltip-format": "{essid}",
+        "format-icons": [
+            "󰤯 ",
+            "󰤟 ",
+            "󰤢 ",
+            "󰤥 ",
+            "󰤨 "
+        ]
+    }
+}
