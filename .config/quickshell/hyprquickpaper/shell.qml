@@ -5,14 +5,15 @@ import Quickshell.Io
 import QtQuick
 import Qt.labs.folderlistmodel
 import Quickshell.Wayland
+import Quickshell.Widgets
 
 PanelWindow {
     id: main
-    implicitHeight: 500
+    implicitHeight: Screen.height
     implicitWidth: Screen.width
     color: "transparent"
 
-    property int animDuration: 100
+    property int animDuration: 300
     property int animEasing: Easing.OutCubic
 
     aboveWindows: true
@@ -51,6 +52,7 @@ PanelWindow {
         onStatusChanged: {
             if (status === FolderListModel.Ready) {
                 list.selectedIndex = configs.number_of_pictures / 2
+                list.previousIndex = list.selectedIndex
                 list.centerTile(list.selectedIndex)
             }
         }
@@ -63,13 +65,14 @@ PanelWindow {
 
         model: folderModel
         orientation: ListView.Horizontal
-        spacing: 4
+        spacing: -300
         clip: true
         // reuseItems: true
         cacheBuffer: width * 2
 
         property int selectedIndex: 0
-        property real tileWidth: width / configs.number_of_pictures + spacing * 2
+        property int previousIndex: 0
+        property real tileWidth: width / configs.number_of_pictures * 1.5
 
         function clampIndex(i) {
             return (count + i) % count
@@ -89,34 +92,57 @@ PanelWindow {
             const step = tileWidth + spacing
             const itemStart = i * step
             const itemCenter = itemStart + tileWidth / 2
-            const centerX = itemCenter - width / 2   // width, not Screen.width — and now depends on i
+            const centerX = itemCenter - width / 2
 
-            contentX = Math.max(0, Math.min(centerX, contentWidth - width))  // clamp yourself
-            console.log(`${i}: ${itemStart} ${centerX} ${contentX}`)
+            contentX = Math.max(0, Math.min(centerX, contentWidth - width))
+        }
+
+        function selectIndex(newIndex) {
+            previousIndex = selectedIndex
+            selectedIndex = newIndex
+            centerTile(newIndex)
+            transitionTimer.restart()
+        }
+
+        Timer {
+            id: transitionTimer
+            interval: animDuration
+            onTriggered: list.previousIndex = list.selectedIndex
         }
 
         Behavior on contentX       { NumberAnimation { duration: animDuration; easing.type: animEasing } }
 
         delegate: Item {
+            id: tileRoot
             property bool active: index === list.selectedIndex
             width: list.tileWidth
-            height: 500 - Math.abs(index - list.selectedIndex) * 50
+            height: 400 - Math.abs(Math.pow(Math.abs(index - list.selectedIndex), 2)) * 50
             anchors.verticalCenter: parent.verticalCenter
+            anchors.verticalCenterOffset: -100 * Math.abs(index - list.selectedIndex)
             property int dist: Math.abs(index - list.selectedIndex)
+
             opacity: {
                 return Math.max(0.0, 1.0 - dist * dist * 0.2)
             }
 
-            Behavior on opacity { NumberAnimation { duration: animDuration / 2 } }
-            Behavior on width  { NumberAnimation { duration: animDuration; easing.type: animEasing } }
-            Behavior on height { NumberAnimation { duration: animDuration; easing.type: animEasing } }
-            Behavior on y       { NumberAnimation { duration: animDuration; easing.type: animEasing } }
+            z: {
+                if (index === list.selectedIndex) return 2
+                if (index === list.previousIndex) return 1
+                return opacity
+            }
 
-            Item {
+            Behavior on opacity { NumberAnimation { duration: animDuration; easing.type: animEasing } }
+            Behavior on width   { NumberAnimation { duration: animDuration; easing.type: animEasing } }
+            Behavior on height  { NumberAnimation { duration: animDuration; easing.type: animEasing } }
+            Behavior on anchors.verticalCenterOffset       { NumberAnimation { duration: animDuration; easing.type: animEasing } }
+
+            ClippingRectangle {
                 id: visual
                 anchors.centerIn: parent
                 width: parent.width * Math.max(0.5, 1.0 - dist * 0.15)
                 height: parent.height
+                radius: 24
+                color: "transparent"
 
                 Text {
                     id: alt
@@ -128,10 +154,12 @@ PanelWindow {
                 }
 
                 Behavior on width { NumberAnimation { duration: 150; easing.type: Easing.OutCubic } }
+
                 Image {
                     id: img
                     anchors.fill: parent
                     fillMode: Image.PreserveAspectCrop
+                    layer.enabled: true
 
                     asynchronous: true
                     cache: true
@@ -158,7 +186,7 @@ PanelWindow {
                             alt.text = "Caching"
                             retryTimer.start()
                         } else if (status == Image.Ready) {
-                            // alt.text = ""
+                            alt.text = ""
                         }
                     }
                 }
@@ -170,20 +198,16 @@ PanelWindow {
             const big = configs.number_of_pictures
 
             if (event.key === Qt.Key_J || event.key === Qt.Key_L) {
-                selectedIndex = clampIndex(selectedIndex + step)
-                centerTile(selectedIndex)
+                selectIndex(clampIndex(selectedIndex + step))
 
             } else if (event.key === Qt.Key_K || event.key === Qt.Key_H) {
-                selectedIndex = clampIndex(selectedIndex - step)
-                centerTile(selectedIndex)
+                selectIndex(clampIndex(selectedIndex - step))
 
             } else if (event.key === Qt.Key_D) {
-                selectedIndex = clampIndex(selectedIndex + big)
-                centerTile(selectedIndex)
+                selectIndex(clampIndex(selectedIndex + big))
 
             } else if (event.key === Qt.Key_U) {
-                selectedIndex = clampIndex(selectedIndex - big)
-                centerTile(selectedIndex)
+                selectIndex(clampIndex(selectedIndex - big))
 
             } else if (event.key === Qt.Key_Space || event.key === Qt.Key_Return) {
                 activateCurrent()
