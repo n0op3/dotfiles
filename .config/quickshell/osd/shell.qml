@@ -47,7 +47,7 @@ Scope {
 			// when the window is created. Most compositors pick the current active monitor.
 
 			anchors.bottom: true
-			margins.bottom: screen.height / 12
+			margins.bottom: screen.height / 20
 			exclusiveZone: 0
 
 			implicitWidth: 400
