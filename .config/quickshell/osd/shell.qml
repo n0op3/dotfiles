@@ -88,8 +88,13 @@ Scope {
 						implicitHeight: 10
 						radius: 20
 						color: "#50ffffff"
+                        border.color: "#11111111"
+                        border.width: 2
 
 						Rectangle {
+                            border.color: "#11111111"
+                            border.width: 2
+
 							anchors {
 								left: parent.left
 								top: parent.top

@@ -70,11 +70,11 @@
         },
         "PenButtons": [
           {
-            "Path": "OpenTabletDriver.Desktop.Binding.KeyBinding",
+            "Path": "OpenTabletDriver.Desktop.Binding.MouseBinding",
             "Settings": [
               {
-                "Property": "Key",
-                "Value": "E"
+                "Property": "Button",
+                "Value": "Middle"
               }
             ],
             "Enable": true

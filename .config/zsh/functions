@@ -9,5 +9,9 @@ startup() {
     fi
 }
 
+s() {
+    nh search "$@" | less
+}
+
 # Kill our ssh-agent on shell exit to prevent accumulation
 trap 'test -n "$SSH_AGENT_PID" && kill "$SSH_AGENT_PID" 2>/dev/null' EXIT
