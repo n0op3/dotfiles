@@ -14,4 +14,4 @@ apply_pywal_colors() {
     fi
 }
 
-apply_pywal_colors
+( apply_pywal_colors & )

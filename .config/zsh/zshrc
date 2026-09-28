@@ -20,6 +20,7 @@ eval "$(starship init zsh)"                                                # Sta
 
 # FZF
 source <(fzf --zsh)
+export FZF_DEFAULT_OPTS="--cycle"
 
 # Zoxide
 eval "$(zoxide init --cmd cd zsh)"
