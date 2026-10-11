@@ -10,6 +10,10 @@
 }
 
 window#waybar {
+    background-color: transparent;
+}
+
+window#waybar > box {
     background-color: #161618;
     border-radius: 14px;
 }
