@@ -1,77 +1,146 @@
-import "."
-
 import QtQuick
-import QtQuick.Layouts
 import Quickshell
 import Quickshell.Wayland
+import Quickshell.Widgets
 
 ShellRoot {
+    id: root
+
+    property int current: 0
+
+    readonly property var actions: [
+        { label: "Suspend",    icon: "system-suspend-symbolic",   code: Qt.Key_U, cmd: ["systemctl", "suspend"] },
+        { label: "Hibernate",  icon: "system-hibernate-symbolic", code: Qt.Key_H, cmd: ["systemctl", "suspend"] },
+        { label: "Reboot",     icon: "system-reboot-symbolic",    code: Qt.Key_R, cmd: ["systemctl", "reboot"] },
+        { label: "Shutdown",   icon: "system-shutdown-symbolic",  code: Qt.Key_S, cmd: ["systemctl", "poweroff"] }
+    ]
+
+    function run(i) {
+        Quickshell.execDetached(actions[i].cmd);
+        Qt.quit();
+    }
+
+    // Palette
+    readonly property color cBg:     "#cc11111b"
+    readonly property color cTile:   Pywal.surface
+    readonly property color cBorder: Pywal.color1
+    readonly property color cText:   Pywal.cursor
+    readonly property color cDim:    Pywal.onSurfaceMuted
+    readonly property color cAccent: Pywal.secondary
+
     Variants {
         model: Quickshell.screens
 
         PanelWindow {
-            id: blurred
-            color: "transparent"
-            aboveWindows: true
-            exclusionMode: ExclusionMode.Ignore
-            exclusiveZone: 1
-
-            property var modelData
+            required property var modelData
             screen: modelData
 
-            anchors {
-                bottom: true
-                top: true
-                left: true
-                right: true
+            anchors { top: true; bottom: true; left: true; right: true }
+            color: root.cBg
+            exclusionMode: ExclusionMode.Ignore
+
+            WlrLayershell.layer: WlrLayer.Overlay
+            WlrLayershell.keyboardFocus: WlrKeyboardFocus.Exclusive
+            WlrLayershell.namespace: "logout-menu"
+
+            // Click outside tiles to close
+            MouseArea {
+                anchors.fill: parent
+                onClicked: Qt.quit()
             }
 
-            BackgroundEffect.blurRegion: Region { item: blurred.contentItem }
-        }
-    }
+            Item {
+                anchors.fill: parent
+                focus: true
 
-    PanelWindow {
-        id: root
-        color: "transparent"
-
-        WlrLayershell.keyboardFocus: WlrKeyboardFocus.Exclusive
-        aboveWindows: true
-        exclusionMode: ExclusionMode.Ignore
-        exclusiveZone: 1
-
-        implicitWidth: 1000
-        implicitHeight: 1000
-
-        Item {
-            id: content
-            anchors.fill: parent
-            focus: true
-
-            property int action: Actions.Action.None
-
-            GridLayout {
-                id: grid
-                anchors.centerIn: parent
-                columns: 3
-                rowSpacing: 10
-                columnSpacing: 10
-
-                PowerButton { Layout.column: 1; Layout.row: 0; label: "Shutdown"; onClicked: action = Actions.Action.Shutdown }
-                PowerButton { Layout.column: 0; Layout.row: 1; label: "Suspend";  onClicked: action = Actions.Action.Suspend }
-
-                PowerButton { Layout.column: 2; Layout.row: 1; label: "Reboot";   onClicked: action = Actions.Action.Reboot }
-                PowerButton { Layout.column: 1; Layout.row: 2; label: "Hibernate";onClicked: action = Actions.Action.Hibernate }
-            }
-
-            Keys.onPressed: function(event) {
-                if (event.key == Qt.Key_Escape) {
-                    if (action == Actions.Action.None) {
-                        Qt.quit()
-                    } else {
-                        action = Actions.Action.None
+                Keys.onPressed: event => {
+                    const n = root.actions.length;
+                    switch (event.key) {
+                    case Qt.Key_Escape:
+                    case Qt.Key_Q:
+                        Qt.quit();
+                        return;
+                    case Qt.Key_Left:
+                    case Qt.Key_H:
+                    case Qt.Key_Backtab:
+                        root.current = (root.current + n - 1) % n;
+                        return;
+                    case Qt.Key_Right:
+                    case Qt.Key_Tab:
+                        root.current = (root.current + 1) % n;
+                        return;
+                    case Qt.Key_Return:
+                    case Qt.Key_Enter:
+                    case Qt.Key_Space:
+                        root.run(root.current);
+                        return;
+                    }
+                    for (let i = 0; i < n; i++) {
+                        if (event.key === root.actions[i].code) {
+                            root.run(i);
+                            return;
+                        }
                     }
                 }
-                event.accepted = true
+
+                Column {
+                    anchors.centerIn: parent
+                    spacing: 28
+
+                    Row {
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        spacing: 16
+
+                        Repeater {
+                            model: root.actions
+
+                            Rectangle {
+                                id: tile
+                                required property var modelData
+                                required property int index
+
+                                readonly property bool active: root.current === index
+                                readonly property color accent: root.cAccent
+
+                                width: 200
+                                height: 200
+                                radius: 18
+                                color: active ? Qt.rgba(accent.r, accent.g, accent.b, 0.15) : root.cTile
+                                border.width: 2
+                                border.color: active ? accent : root.cBorder
+                                scale: active ? 1.06 : 1.0
+
+                                Behavior on scale        { NumberAnimation { duration: 120; easing.type: Easing.OutCubic } }
+                                Behavior on color        { ColorAnimation  { duration: 120 } }
+                                Behavior on border.color { ColorAnimation  { duration: 120 } }
+
+                                Column {
+                                    anchors.centerIn: parent
+                                    spacing: 14
+
+                                    IconImage {
+                                        source: Quickshell.iconPath(tile.modelData.icon)
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        implicitSize: 64
+                                    }
+                                    Text {
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        text: tile.modelData.label
+                                        color: tile.active ? root.cText : root.cDim
+                                        font.pixelSize: 15
+                                    }
+                                }
+
+                                MouseArea {
+                                    anchors.fill: parent
+                                    hoverEnabled: true
+                                    onEntered: root.current = tile.index
+                                    onClicked: root.run(tile.index)
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
