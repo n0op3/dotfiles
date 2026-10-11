@@ -61,7 +61,6 @@ ShellRoot {
                         Qt.quit();
                         return;
                     case Qt.Key_Left:
-                    case Qt.Key_H:
                     case Qt.Key_Backtab:
                         root.current = (root.current + n - 1) % n;
                         return;
