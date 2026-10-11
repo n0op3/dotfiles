@@ -21,7 +21,7 @@ ShellRoot {
     }
 
     // Palette
-    readonly property color cBg:     "#cc11111b"
+    readonly property color cBg:     "#8811111b"
     readonly property color cTile:   Pywal.surface
     readonly property color cBorder: Pywal.color1
     readonly property color cText:   Pywal.cursor
@@ -32,8 +32,11 @@ ShellRoot {
         model: Quickshell.screens
 
         PanelWindow {
+            id: panel
             required property var modelData
             screen: modelData
+
+            BackgroundEffect.blurRegion: Region { item: panel.contentItem }
 
             anchors { top: true; bottom: true; left: true; right: true }
             color: root.cBg
