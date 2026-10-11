@@ -9,10 +9,10 @@ ShellRoot {
     property int current: 0
 
     readonly property var actions: [
-        { label: "Suspend",    icon: "system-suspend-symbolic",   code: Qt.Key_U, cmd: ["systemctl", "suspend"] },
-        { label: "Hibernate",  icon: "system-hibernate-symbolic", code: Qt.Key_H, cmd: ["systemctl", "suspend"] },
-        { label: "Reboot",     icon: "system-reboot-symbolic",    code: Qt.Key_R, cmd: ["systemctl", "reboot"] },
-        { label: "Shutdown",   icon: "system-shutdown-symbolic",  code: Qt.Key_S, cmd: ["systemctl", "poweroff"] }
+        { label: "Suspend",    icon: "system-suspend-symbolic",   code: Qt.Key_U, cmd: ["systemctl", "suspend"]   },
+        { label: "Hibernate",  icon: "system-hibernate-symbolic", code: Qt.Key_H, cmd: ["systemctl", "hibernate"] },
+        { label: "Reboot",     icon: "system-reboot-symbolic",    code: Qt.Key_R, cmd: ["systemctl", "reboot"]    },
+        { label: "Shutdown",   icon: "system-shutdown-symbolic",  code: Qt.Key_S, cmd: ["systemctl", "poweroff"]  }
     ]
 
     function run(i) {
@@ -57,7 +57,6 @@ ShellRoot {
                     const n = root.actions.length;
                     switch (event.key) {
                     case Qt.Key_Escape:
-                    case Qt.Key_Q:
                         Qt.quit();
                         return;
                     case Qt.Key_Left:
@@ -70,7 +69,6 @@ ShellRoot {
                         return;
                     case Qt.Key_Return:
                     case Qt.Key_Enter:
-                    case Qt.Key_Space:
                         root.run(root.current);
                         return;
                     }
