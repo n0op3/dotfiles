@@ -1,7 +1,10 @@
 source ~/.config/zsh/common
 
 # --- Env ---
-export TMUX_SOCKET_NAME="tmux-$RANDOM"
+if [ ! -z TMUX_SOCKET_NAME ]; then
+    export TMUX_SOCKET_NAME="tmux-$RANDOM"
+fi
+
 export EDITOR=${SSH_CONNECTION:+vim}
     : ${EDITOR:=nvim}
 export VISUAL=$EDITOR
