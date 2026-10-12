@@ -1,96 +1,85 @@
-export SHELL=$(which zsh)
+source ~/.config/zsh/common
+
+# --- Env ---
 export TMUX_SOCKET_NAME="tmux-$RANDOM"
-
-# if [ "$(tty)" = "/dev/tty1" ]; then
-#     clear
-#     echo "Starting Hyprland..."
-#     exec start-hyprland >> /tmp/hyprland.log
-# else
-#     if [[ $(tty) =~ ^/dev/tty[0-9]+$ ]]; then
-#         echo "Restoring Hyprland..."
-#         ~/.scripts/restore_hyprland.sh
-#     fi
-# fi
-
-# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"  # Oh My Posh
-eval "$(starship init zsh)"                                                # Starship
-
-# rustup
-# eval "$(rustup completions zsh)"
-
-# FZF
-source <(fzf --zsh)
+export EDITOR=${SSH_CONNECTION:+vim}
+    : ${EDITOR:=nvim}
+export VISUAL=$EDITOR
+export MANPAGER='nvim +Man!'
 export FZF_DEFAULT_OPTS="--cycle"
 
-# Zoxide
-eval "$(zoxide init --cmd cd zsh)"
+setopt autocd interactive_comments
 
-# Yazi
-function y() {
-    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-    yazi "$@" --cwd-file="$tmp"
-    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-        builtin cd -- "$cwd"
+# --- History ---
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=$HISTSIZE
+setopt sharehistory hist_ignore_space hist_ignore_all_dups hist_reduce_blanks
+
+# --- Completion ---
+zstyle ':completion:*' matcher-list \
+    'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+autoload -Uz compinit
+_zd=${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump
+[[ -d ${_zd:h} ]] || mkdir -p ${_zd:h}
+if [[ -n $_zd(#qN.mh-24) ]]; then compinit -C -d $_zd; else compinit -d $_zd; fi
+unset _zd
+
+# --- Cached tool init ---
+_cache_init() {
+    local name=$1; shift
+    local bin=${commands[$1]:A}
+    [[ -n $bin ]] || return
+    local f=${XDG_CACHE_HOME:-$HOME/.cache}/zsh/init-$name-${bin//\//_}.zsh
+    if [[ ! -s $f ]]; then
+        mkdir -p ${f:h}
+        "$@" >| $f
     fi
+    source $f
+}
+_cache_init starship starship init zsh --print-full-init
+_cache_init zoxide   zoxide init --cmd cd zsh
+_cache_init fzf      fzf --zsh
+
+# --- Keybindings ---
+bindkey -v
+KEYTIMEOUT=1
+bindkey -M viins '^p' history-search-backward
+bindkey -M viins '^n' history-search-forward
+
+sudo-toggle() {
+    [[ -z $BUFFER ]] && BUFFER=$(fc -ln -1)
+    if [[ $BUFFER == sudo\ * ]]; then
+        BUFFER=${BUFFER#sudo }; (( CURSOR = CURSOR > 5 ? CURSOR - 5 : 0 ))
+    else
+        BUFFER="sudo $BUFFER"; (( CURSOR += 5 ))
+    fi
+}
+zle -N sudo-toggle
+bindkey -M vicmd '\e' sudo-toggle
+
+# --- Plugins (deferred) ---
+ZINIT_HOME=$HOME/.local/share/zinit/zinit.git
+[[ -r $ZINIT_HOME/zinit.zsh ]] || {
+    mkdir -p ${ZINIT_HOME:h}
+    git clone https://github.com/zdharma-continuum/zinit $ZINIT_HOME
+}
+source $ZINIT_HOME/zinit.zsh
+
+zinit wait lucid for \
+    Aloxaf/fzf-tab \
+    atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
+    zdharma-continuum/fast-syntax-highlighting
+
+y() {
+    local tmp cwd
+    tmp=$(mktemp -t "yazi-cwd.XXXXXX")
+    yazi "$@" --cwd-file="$tmp"
+    cwd=$(<"$tmp")
+    [[ -n $cwd && $cwd != $PWD ]] && builtin cd -- "$cwd"
     rm -f -- "$tmp"
 }
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='vim'
-else
-    export EDITOR='nvim'
-fi
-
-# Keybindings
-bindkey -v
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-
-# Use Neovim to read man pages
-export MANPAGER='nvim +Man!'
-
-# History settings
-HISTSIZE=1000
-HISTFILE=~/.zsh_history
-SAVEHIST=$HISTSIZE
-HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
-
-# cd
-setopt autocd
-
-# Added by Zinit's installer
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
-        print -P "%F{33} %F{34}Installation successful.%f%b" || \
-        print -P "%F{160} The clone has failed.%f%b"
-fi
-
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-zstyle ':completion:*' matcher-list \
-    'm:{a-zA-Z}={A-Za-z}' \
-    'r:|[._-]=* r:|=*' \
-    'l:|=* r:|=*'
-
-# Plugins
-zinit load zsh-users/zsh-autosuggestions
-zinit ice wait
-zinit load Aloxaf/fzf-tab
-zinit ice wait
-zinit load zdharma-continuum/fast-syntax-highlighting
-
-source ~/.config/zsh/functions
-source ~/.config/zsh/aliases
-
+[[ -r ~/.config/zsh/functions ]] && source ~/.config/zsh/functions
+[[ -r ~/.config/zsh/aliases ]] && source ~/.config/zsh/aliases
 startup

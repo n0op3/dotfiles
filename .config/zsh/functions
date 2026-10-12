@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-source ~/.config/zsh/common
-
 startup() {
     # Start the SSH agent only if no agent is reachable
     if [ -z "$SSH_AUTH_SOCK" ] || ! ssh-add -l >/dev/null 2>&1; then
