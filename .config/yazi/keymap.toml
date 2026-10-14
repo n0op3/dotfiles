@@ -11,8 +11,8 @@ prepend_keymap = [
   { on = ["u", "d"], run = "plugin yamb delete_by_key", desc = "Delete bookmark by key" },
   { on = ["u", "D"], run = "plugin yamb delete_by_fzf", desc = "Delete bookmark by fzf" },
   { on = ["u", "A"], run = "plugin yamb delete_all", desc = "Delete all bookmarks" },
-  { on = "<C-A-w>", run = ''' shell 'set_wallpaper.sh "%h"' ''', desc = "Set the current image as a wallpaper" },
-  { on = "<C-n>", run = ''' shell 'dragon-drop -x -i -T "%s"' ''' },
+  { on = "<C-A-w>", run = ''' shell 'set_wallpaper.sh %h' ''', desc = "Set the current image as a wallpaper" },
+  { on = "<C-n>", run = ''' shell 'dragon-drop -x -i -T %s' ''' },
 ]
 
 [input]
