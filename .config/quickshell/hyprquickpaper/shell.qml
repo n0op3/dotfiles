@@ -3,7 +3,6 @@
 import Quickshell
 import Quickshell.Io
 import QtQuick
-import Qt.labs.folderlistmodel
 import Quickshell.Wayland
 import Quickshell.Widgets
 
@@ -25,13 +24,13 @@ PanelWindow {
     WlrLayershell.keyboardFocus: WlrKeyboardFocus.Exclusive
     Component.onCompleted: {
         Quickshell.execDetached(["bash", Quickshell.shellPath("cache.sh"), Quickshell.shellDir])
-        console.log(Quickshell.shellDir)
     }
 
     FileView {
         path: Quickshell.shellPath("config.json")
         watchChanges: true
         onFileChanged: reload()
+        onLoaded: finder.running = true
 
         JsonAdapter {
             id: configs
@@ -41,17 +40,30 @@ PanelWindow {
         }
     }
 
-    FolderListModel {
-        id: folderModel
-        folder: "file://" + configs.wallpaper_path
-        showDirs: false
-        nameFilters: ["*.png","*.jpg",".jpeg"]
-        sortField: FolderListModel.Time
-        // sortReversed: true
+    ListModel { id: fileList }
 
-        onStatusChanged: {
-            if (status === FolderListModel.Ready) {
-                list.selectedIndex = configs.number_of_pictures / 2
+    Process {
+        id: finder
+        command: ["sh", "-c",
+            "find \"$1\" -type f \\( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \\) -printf '%T@ %p\\n' | sort -nr | cut -d' ' -f2-",
+            "sh", configs.wallpaper_path]
+
+        stderr: StdioCollector {
+            onStreamFinished: console.log("find stderr:", JSON.stringify(text))
+        }
+
+        stdout: StdioCollector {
+            onStreamFinished: {
+                fileList.clear()
+                for (const p of text.split("\n")) {
+                    if (!p) continue
+                    fileList.append({
+                        filePath: p,
+                        fileName: p.substring(p.lastIndexOf("/") + 1)
+                    })
+                }
+                if (fileList.count === 0) return
+                list.selectedIndex = Math.min(Math.floor(configs.number_of_pictures / 2), fileList.count - 1)
                 list.previousIndex = list.selectedIndex
                 list.centerTile(list.selectedIndex)
             }
@@ -63,7 +75,7 @@ PanelWindow {
         anchors.fill: parent
         focus: true
 
-        model: folderModel
+        model: fileList
         orientation: ListView.Horizontal
         spacing: -300
         clip: true
@@ -79,7 +91,7 @@ PanelWindow {
         }
 
         function activateCurrent() {
-            const path = folderModel.get(selectedIndex, "filePath")
+            const path = fileList.get(selectedIndex).filePath
             Quickshell.execDetached(["bash", Quickshell.shellPath("commands.sh"), path])
             Qt.quit()
         }
