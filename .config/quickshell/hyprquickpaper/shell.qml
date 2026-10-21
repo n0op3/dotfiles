@@ -14,6 +14,29 @@ PanelWindow {
 
     property int animDuration: 300
     property int animEasing: Easing.OutCubic
+    property var folderNames: ["All"]
+    property int folderIndex: 0
+
+    function applyFilter() {
+        fileList.clear()
+        const name = folderNames[folderIndex]
+        for (let i = 0; i < allFiles.count; i++) {
+            const f = allFiles.get(i)
+            if (folderIndex === 0 || f.folder === name)
+            fileList.append({ filePath: f.filePath, fileName: f.fileName, folder: f.folder })
+        }
+        if (fileList.count === 0) return
+        list.selectedIndex = Math.min(Math.floor(configs.number_of_pictures / 2), fileList.count - 1)
+        list.previousIndex = list.selectedIndex
+        list.centerTile(list.selectedIndex)
+    }
+
+    function cycleFolder(dir) {
+        folderIndex = (folderIndex + dir + folderNames.length) % folderNames.length
+        switchAnim.restart()
+    }
+
+    ListModel { id: allFiles }
 
     aboveWindows: true
     exclusionMode: "Ignore"
@@ -24,6 +47,13 @@ PanelWindow {
     WlrLayershell.keyboardFocus: WlrKeyboardFocus.Exclusive
     Component.onCompleted: {
         Quickshell.execDetached(["bash", Quickshell.shellPath("cache.sh"), Quickshell.shellDir])
+    }
+
+    SequentialAnimation {
+        id: switchAnim
+        NumberAnimation { target: list; property: "opacity"; to: 0; duration: 150 }
+        ScriptAction { script: main.applyFilter() }
+        NumberAnimation { target: list; property: "opacity"; to: 1; duration: 250 }
     }
 
     FileView {
@@ -40,6 +70,15 @@ PanelWindow {
         }
     }
 
+    Text {
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: parent.top
+        anchors.topMargin: 200
+        color: "white"
+        font.pixelSize: 20
+        text: main.folderNames[main.folderIndex] + " (" + fileList.count + ")"
+    }
+
     ListModel { id: fileList }
 
     Process {
@@ -54,18 +93,24 @@ PanelWindow {
 
         stdout: StdioCollector {
             onStreamFinished: {
-                fileList.clear()
+                const base = configs.wallpaper_path.replace(/\/+$/, "") + "/"
+                const seen = new Set()
+                allFiles.clear()
                 for (const p of text.split("\n")) {
                     if (!p) continue
-                    fileList.append({
+                    const rel = p.startsWith(base) ? p.substring(base.length) : p
+                    const slash = rel.lastIndexOf("/")
+                    const folder = slash === -1 ? "." : rel.substring(0, slash)
+                    seen.add(folder)
+                    allFiles.append({
                         filePath: p,
-                        fileName: p.substring(p.lastIndexOf("/") + 1)
+                        fileName: p.substring(p.lastIndexOf("/") + 1),
+                        folder: folder
                     })
                 }
-                if (fileList.count === 0) return
-                list.selectedIndex = Math.min(Math.floor(configs.number_of_pictures / 2), fileList.count - 1)
-                list.previousIndex = list.selectedIndex
-                list.centerTile(list.selectedIndex)
+                folderNames = ["All", ...Array.from(seen).sort()]
+                folderIndex = 0
+                applyFilter()
             }
         }
     }
@@ -122,7 +167,10 @@ PanelWindow {
             onTriggered: list.previousIndex = list.selectedIndex
         }
 
-        Behavior on contentX       { NumberAnimation { duration: animDuration; easing.type: animEasing } }
+        Behavior on contentX {
+            enabled: !switchAnim.running
+            NumberAnimation { duration: animDuration; easing.type: animEasing }
+        }
 
         delegate: Item {
             id: tileRoot
@@ -226,7 +274,11 @@ PanelWindow {
 
             } else if (event.key === Qt.Key_Escape) {
                 Qt.quit()
+            } else if (event.key === Qt.Key_Tab) {
+                main.cycleFolder(1)
 
+            } else if (event.key === Qt.Key_Backtab) {
+                main.cycleFolder(-1)
             } else return
 
             event.accepted = true
