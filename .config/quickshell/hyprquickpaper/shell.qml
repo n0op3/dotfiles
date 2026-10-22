@@ -26,9 +26,9 @@ PanelWindow {
             fileList.append({ filePath: f.filePath, fileName: f.fileName, folder: f.folder })
         }
         if (fileList.count === 0) return
-        list.selectedIndex = Math.min(Math.floor(configs.number_of_pictures / 2), fileList.count - 1)
+        list.selectedIndex = Math.min(Math.floor(configs.number_of_pictures / 2) + 1, fileList.count - 1)
         list.previousIndex = list.selectedIndex
-        list.centerTile(list.selectedIndex)
+        Qt.callLater(() => list.centerTile(list.selectedIndex))
     }
 
     function cycleFolder(dir) {
@@ -147,11 +147,9 @@ PanelWindow {
 
         function centerTile(i) {
             const step = tileWidth + spacing
-            const itemStart = i * step
-            const itemCenter = itemStart + tileWidth / 2
-            const centerX = itemCenter - width / 2
-
-            contentX = Math.max(0, Math.min(centerX, contentWidth - width))
+            const total = (count - 1) * step + tileWidth
+            const centerX = i * step + tileWidth / 2 - width / 2
+            contentX = Math.max(0, Math.min(centerX, Math.max(0, total - width)))
         }
 
         function selectIndex(newIndex) {
