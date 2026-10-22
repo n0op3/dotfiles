@@ -6,6 +6,14 @@ configuration {
     font: "Rubik Bold 12";
 }
 
+#window {
+    background-color: #161618;
+}
+
+* {
+    background: #161618;
+}
+
 inputbar {
     border: 2px solid;
     border-color: @active-background;
@@ -14,6 +22,7 @@ inputbar {
 }
 
 element {
+    background-color: #161618;
     border-radius: 32px;
     text-color: @normal-background;
 }
@@ -27,5 +36,6 @@ element-icon {
 }
 
 listview {
+    background-color: #161618;
     lines: 12;
 }
