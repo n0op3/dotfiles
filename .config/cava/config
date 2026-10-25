@@ -1,2 +1,5 @@
 [output]
 orientation = horizontal
+
+[smoothing]
+noise_reduction = 60
