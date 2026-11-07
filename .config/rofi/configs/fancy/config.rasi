@@ -1,5 +1,6 @@
 @theme ".config/rofi/configs/shared.rasi"
 ?import ".cache/rofi-rounding.rasi"
+?import ".cache/wal/colors-rofi.rasi"
 
 configuration {
 	show-icons: true;
@@ -8,6 +9,7 @@ configuration {
 
 #window {
     background-color: #161618;
+    border-color: @color6;
 }
 
 * {
@@ -16,7 +18,7 @@ configuration {
 
 inputbar {
     border: 2px solid;
-    border-color: @active-background;
+    border-color: @selected-active-background;
     padding: 4px;
     border-radius: 32px;
 }
@@ -25,6 +27,10 @@ element {
     background-color: #161618;
     border-radius: 32px;
     text-color: @normal-background;
+}
+
+#element.selected.normal {
+    background-color: @selected-active-background;
 }
 
 element-text {
