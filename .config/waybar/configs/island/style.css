@@ -13,19 +13,19 @@
 
 .modules-left {
     background: #161618;
-    border: 2px solid @color6;
+    border: 2px solid @color1;
     border-radius: 22px;
 }
 
 .modules-center {
     background: #161618;
-    border: 2px solid @color6;
+    border: 2px solid @color1;
     border-radius: 22px;
 }
 
 .modules-right {
     background: #161618;
-    border: 2px solid @color6;
+    border: 2px solid @color1;
     border-radius: 22px;
 }
 
@@ -50,24 +50,28 @@ window#waybar {
     color: @fg;
 }
 
+#custom-date {
+    color: @fg;
+}
+
 #cpu {
-    color: @color5;
+    color: @fg;
 }
 
 #memory {
-    color: @color8;
+    color: @fg;
 }
 
 #network {
-    color: @color63;
+    color: @fg;
 }
 
 #pulseaudio {
-    color: @color61;
+    color: @fg;
 }
 
 #battery {
-    color: @color62;
+    color: @fg;
 }
 
 #custom-notification {
