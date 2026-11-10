@@ -3,6 +3,7 @@ source ~/.config/zsh/common
 # --- Env ---
 if [ ! -z TMUX_SOCKET_NAME ]; then
     export TMUX_SOCKET_NAME="tmux-$RANDOM"
+    alias fastfetch='fastfetch --logo-type kitty-direct'
 fi
 
 export EDITOR=${SSH_CONNECTION:+vim}
