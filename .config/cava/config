@@ -1,3 +1,6 @@
+[input]
+channels = 1
+
 [output]
 orientation = horizontal
 
